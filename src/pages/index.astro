@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout>
+  <Header currentPage="home" />
+  
+  <main>
+    <!-- Hero section will go here -->
+    <section class="hero">
+      <div class="container">
+        <h1>Coming Soon: Full Univent Site</h1>
+        <p>We're migrating to Astro for better performance!</p>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 120px 0;
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    color: var(--brand-red);
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+  }
+</style>
+
+<!-- Include the client-side language script -->
+<script>
+  // This will run only on the client
+  if (typeof window !== 'undefined') {
+    // Import and initialize the language manager
+    import('../scripts/init-language.js');
+  }
+</script>

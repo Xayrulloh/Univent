@@ -1,0 +1,89 @@
+---
+// Define props for active page highlighting
+export interface Props {
+  currentPage?: string;
+}
+
+const { currentPage = '' } = Astro.props;
+---
+
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo" aria-label="Univent logo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.5 7.2 7.5 1.1-5.4 5.3 1.3 7.4L12 19.1 5.1 23l1.3-7.4L1 10.3l7.5-1.1L12 2z"/></svg>
+      </div>
+      <span>Univent</span>
+    </div>
+    
+    <nav>
+      <ul>
+        <li>
+          <a 
+            href="#about" 
+            class={currentPage === 'about' ? 'active' : ''}
+          >
+            О компании
+          </a>
+        </li>
+        <li>
+          <a 
+            href="#products" 
+            class={currentPage === 'products' ? 'active' : ''}
+          >
+            Продукция
+          </a>
+        </li>
+        <li>
+          <a 
+            href="#benefits" 
+            class={currentPage === 'benefits' ? 'active' : ''}
+          >
+            Преимущества
+          </a>
+        </li>
+        <li>
+          <a 
+            href="#branches" 
+            class={currentPage === 'branches' ? 'active' : ''}
+          >
+            Филиалы
+          </a>
+        </li>
+        <li>
+          <a 
+            href="#contact" 
+            class={currentPage === 'contact' ? 'active' : ''}
+          >
+            Контакты
+          </a>
+        </li>
+      </ul>
+    </nav>
+    
+    <div class="lang">
+      <button class="active" aria-pressed="true">RU</button>
+      <button aria-pressed="false">UZ</button>
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Add active state for navigation */
+  nav a.active {
+    background: var(--muted);
+    color: var(--brand-red);
+  }
+</style>
+
+<script>
+  // Import language manager
+  import { languageManager } from '../utils/language';
+  
+  // Initialize language switcher when component is mounted
+  if (typeof document !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', () => {
+      languageManager.initLanguageSwitcher();
+    });
+  }
+</script>
