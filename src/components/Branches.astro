@@ -1,0 +1,73 @@
+---
+import SectionHead from './SectionHead.astro';
+---
+
+<section id="branches">
+  <div class="container">
+    <SectionHead 
+      title="Филиалы" 
+      description="Найдите ближайшую точку продаж Univent. На выставке — отсканируйте QR и получите карту на телефоне." 
+    />
+    
+    <div class="map" aria-label="Карта филиалов (заглушка)"></div>
+    
+    <div class="cities">
+      <span class="pill">Ташкент</span>
+      <span class="pill">Самарканд</span>
+      <span class="pill">Бухара</span>
+      <span class="pill">Наманган</span>
+      <span class="pill">Андижан</span>
+      <span class="pill">Фергана</span>
+      <span class="pill">Коканд</span>
+      <span class="pill">Нукус</span>
+      <span class="pill">Хива</span>
+      <span class="pill">Навои</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .map {
+    height: 320px;
+    border-radius: 20px;
+    border: 1px solid #eee;
+    background: repeating-linear-gradient(45deg,#fafafa,#fafafa 12px,#f3f3f3 12px,#f3f3f3 24px);
+    margin-bottom: 24px;
+  }
+
+  .cities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .pill {
+    border: 1px solid #eee;
+    border-radius: 999px;
+    padding: 8px 12px;
+    background: #fff;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+
+  .pill:hover {
+    border-color: var(--brand-red);
+    color: var(--brand-red);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 680px) {
+    .map {
+      height: 240px;
+    }
+    
+    .cities {
+      justify-content: center;
+    }
+
+    .pill {
+      padding: 6px 10px;
+      font-size: 13px;
+    }
+  }
+</style>
