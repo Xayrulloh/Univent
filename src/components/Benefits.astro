@@ -1,0 +1,107 @@
+---
+import SectionHead from './SectionHead.astro';
+---
+
+<section id="benefits">
+  <div class="container">
+    <SectionHead 
+      title="Почему Univent" 
+      description="Профессионализм, масштаб и стабильность поставок — то, что выделяет нас на рынке." 
+    />
+    
+    <div class="grid">
+      <div class="adv" style="grid-column: span 3;">
+        <i></i>
+        <div>
+          <h4>Первые в сфере</h4>
+          <p>Системно развиваем рынок вентиляции в РУз.</p>
+        </div>
+      </div>
+      
+      <div class="adv" style="grid-column: span 3;">
+        <i></i>
+        <div>
+          <h4>1500+ позиций</h4>
+          <p>Широчайший ассортимент для любых задач.</p>
+        </div>
+      </div>
+      
+      <div class="adv" style="grid-column: span 3;">
+        <i></i>
+        <div>
+          <h4>15+ точек продаж</h4>
+          <p>Охват по всей стране, быстрое наличие.</p>
+        </div>
+      </div>
+      
+      <div class="adv" style="grid-column: span 3;">
+        <i></i>
+        <div>
+          <h4>Сертификация</h4>
+          <p>Официальные поставки и контроль качества.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .adv {
+    background: #fff;
+    border: 1px dashed #e8e8e8;
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  
+  .adv:hover {
+    transform: translateY(-2px);
+    border-color: var(--brand-red);
+  }
+  
+  .adv i {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: var(--brand-red);
+    flex: 0 0 28px;
+    box-shadow: 0 6px 14px rgba(225,29,47,.35);
+    position: relative;
+  }
+  
+  .adv i::before {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  .adv h4 {
+    margin: 0 0 6px 0;
+    font-size: 18px;
+  }
+  
+  .adv p {
+    margin: 0;
+    color: #555;
+  }
+  
+  @media (max-width: 980px) {
+    .benefits-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 680px) {
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
