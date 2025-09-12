@@ -75,15 +75,3 @@ const { currentPage = '' } = Astro.props;
     color: var(--brand-red);
   }
 </style>
-
-<script>
-  // Import language manager
-  import { languageManager } from '../utils/language';
-  
-  // Initialize language switcher when component is mounted
-  if (typeof document !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', () => {
-      languageManager.initLanguageSwitcher();
-    });
-  }
-</script>

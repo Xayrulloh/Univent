@@ -162,3 +162,14 @@ footer small {
     padding: 28px 0;
   }
 }
+
+section {
+  padding: 72px 0;
+  border-top: 1px solid #f1f1f1;
+}
+
+@media (max-width: 680px) {
+  section {
+    padding: 48px 0;
+  }
+}

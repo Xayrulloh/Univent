@@ -1,17 +1,13 @@
----
-import { languageManager } from '../utils/language';
----
-
 <footer>
   <div class="container foot">
     <div class="brand">
       <div class="logo" aria-label="Univent logo">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.5 7.2 7.5 1.1-5.4 5.3 1.3 7.4L12 19.1 5.1 23l1.3-7.4L1 10.3l7.5-1.1L12 2z"/></svg>
       </div>
-      <span>{languageManager.getTranslation('companyName')}</span>
+      <span>Univent</span>
     </div>
     
-    <small>{languageManager.getTranslation('copyright')}</small>
+    <small>© Univent. Все права защищены.</small>
     
     <div class="social" aria-label="соцсети">
       <a href="#" title="Telegram" aria-label="Telegram">
@@ -26,22 +22,3 @@ import { languageManager } from '../utils/language';
     </div>
   </div>
 </footer>
-
-<script>
-  import { isLanguageChangeEvent } from '../types/events.js';
-  
-  // This is a client-side only script
-  if (typeof window !== 'undefined') {
-    // Listen for language changes and update the footer
-    window.addEventListener('languageChanged', (event: Event) => {
-      if (isLanguageChangeEvent(event)) {
-        const { language } = event.detail;
-        console.log('Language changed to:', language);
-        
-        // In a real app, you would update the text content here
-        // For now, we'll just reload the page to see changes
-        window.location.reload();
-      }
-    });
-  }
-</script>
