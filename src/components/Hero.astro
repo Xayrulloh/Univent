@@ -3,6 +3,7 @@ import { getCurrentLocale, getTranslation } from '../utils/translations';
 
 const locale = getCurrentLocale(Astro.url);
 const t = getTranslation(locale);
+const ariaLabel  = t.hero.art;
 ---
 
 <section class="hero">
@@ -22,7 +23,7 @@ const t = getTranslation(locale);
       </div>
     </div>
     <div class="hero-right">
-      <div class="art" role="img" aria-label="Визуализация потока воздуха"></div>
+      <div class="art" role="img" :aria-label="ariaLabel"></div>
     </div>
   </div>
 </section>

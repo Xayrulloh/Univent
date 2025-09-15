@@ -1,44 +1,48 @@
 ---
+import { getCurrentLocale, getTranslation } from '../utils/translations';
 import SectionHead from './SectionHead.astro';
+
+const locale = getCurrentLocale(Astro.url);
+const t = getTranslation(locale);
 ---
 
 <section id="benefits">
   <div class="container">
     <SectionHead 
-      title="Почему Univent" 
-      description="Профессионализм, масштаб и стабильность поставок — то, что выделяет нас на рынке." 
+      title={t.benefits.title}
+      description={t.benefits.description}
     />
-    
+
     <div class="grid">
       <div class="adv" style="grid-column: span 3;">
         <i></i>
         <div>
-          <h4>Первые в сфере</h4>
-          <p>Системно развиваем рынок вентиляции в РУз.</p>
+          <h4>{t.benefits.items.first}</h4>
+          <p>{t.benefits.items.first_desc}</p>
         </div>
       </div>
-      
+
       <div class="adv" style="grid-column: span 3;">
         <i></i>
         <div>
-          <h4>1500+ позиций</h4>
-          <p>Широчайший ассортимент для любых задач.</p>
+          <h4>{t.benefits.items.products}</h4>
+          <p>{t.benefits.items.products_desc}</p>
         </div>
       </div>
-      
+
       <div class="adv" style="grid-column: span 3;">
         <i></i>
         <div>
-          <h4>15+ точек продаж</h4>
-          <p>Охват по всей стране, быстрое наличие.</p>
+          <h4>{t.benefits.items.stores}</h4>
+          <p>{t.benefits.items.stores_desc}</p>
         </div>
       </div>
-      
+
       <div class="adv" style="grid-column: span 3;">
         <i></i>
         <div>
-          <h4>Сертификация</h4>
-          <p>Официальные поставки и контроль качества.</p>
+          <h4>{t.benefits.items.certification}</h4>
+          <p>{t.benefits.items.certification_desc}</p>
         </div>
       </div>
     </div>

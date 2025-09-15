@@ -16,13 +16,13 @@ const t = getTranslation(locale);
 
 <header>
   <div class="container nav">
-    <a href={`/${locale}`} class="brand">
+    <a href={`/${locale !== 'ru' ? locale : ''}`} class="brand">
       <div class="logo" aria-label={t.header.title}>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.5 7.2 7.5 1.1-5.4 5.3 1.3 7.4L12 19.1 5.1 23l1.3-7.4L1 10.3l7.5-1.1L12 2z"/></svg>
       </div>
       <span>{t.header.title}</span>
     </a>
-    
+
     <nav>
       <ul>
         <li><a href={`${locale !== 'ru' ? `/${locale}#about` : '#about'}`}>{t.header.nav.about}</a></li>
@@ -32,7 +32,7 @@ const t = getTranslation(locale);
         <li><a href={`${locale !== 'ru' ? `/${locale}#contact` : '#contact'}`}>{t.header.nav.contact}</a></li>
       </ul>
     </nav>
-    
+
     <div class="lang">
       <button 
         onclick={`window.location.href='${getAbsoluteLocaleUrl('ru', currentPath)}'`}
@@ -54,7 +54,7 @@ const t = getTranslation(locale);
       </button>
     </div>
 </div>
-    
+
     <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
   </div>
 </header>

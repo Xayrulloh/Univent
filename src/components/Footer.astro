@@ -1,3 +1,9 @@
+---
+import { getCurrentLocale, getTranslation } from '../utils/translations';
+
+const locale = getCurrentLocale(Astro.url);
+const t = getTranslation(locale);
+---
 <footer>
   <div class="container foot">
     <div class="brand">
@@ -7,7 +13,7 @@
       <span>Univent</span>
     </div>
     
-    <small>© Univent. Все права защищены.</small>
+    <small>{t.footer.copyright}</small>
     
     <div class="social" aria-label="соцсети">
       <a href="#" title="Telegram" aria-label="Telegram">

@@ -1,27 +1,31 @@
 ---
+import { getCurrentLocale, getTranslation } from '../utils/translations';
 import SectionHead from './SectionHead.astro';
+
+const locale = getCurrentLocale(Astro.url);
+const t = getTranslation(locale);
 ---
 
 <section id="branches">
   <div class="container">
     <SectionHead 
-      title="Филиалы" 
-      description="Найдите ближайшую точку продаж Univent. На выставке — отсканируйте QR и получите карту на телефоне." 
+      title={t.branches.title}
+      description={t.branches.description}
     />
-    
-    <div class="map" aria-label="Карта филиалов (заглушка)"></div>
-    
+
+    <div class="map" aria-label={t.branches.map} :aria-label="ariaLabel"></div>
+
     <div class="cities">
-      <span class="pill">Ташкент</span>
-      <span class="pill">Самарканд</span>
-      <span class="pill">Бухара</span>
-      <span class="pill">Наманган</span>
-      <span class="pill">Андижан</span>
-      <span class="pill">Фергана</span>
-      <span class="pill">Коканд</span>
-      <span class="pill">Нукус</span>
-      <span class="pill">Хива</span>
-      <span class="pill">Навои</span>
+      <span class="pill">{t.branches.cities[0]}</span>
+      <span class="pill">{t.branches.cities[1]}</span>
+      <span class="pill">{t.branches.cities[2]}</span>
+      <span class="pill">{t.branches.cities[3]}</span>
+      <span class="pill">{t.branches.cities[4]}</span>
+      <span class="pill">{t.branches.cities[5]}</span>
+      <span class="pill">{t.branches.cities[6]}</span>
+      <span class="pill">{t.branches.cities[7]}</span>
+      <span class="pill">{t.branches.cities[8]}</span>
+      <span class="pill">{t.branches.cities[9]}</span>
     </div>
   </div>
 </section>

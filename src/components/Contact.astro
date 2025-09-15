@@ -1,22 +1,26 @@
 ---
+import { getCurrentLocale, getTranslation } from '../utils/translations';
 import SectionHead from './SectionHead.astro';
+
+const locale = getCurrentLocale(Astro.url);
+const t = getTranslation(locale);
 ---
 
 <section id="contact">
   <div class="container">
     <SectionHead 
-      title="Контакты" 
-      description="Оставьте заявку — мы поможем подобрать решение под вашу задачу." 
+      title={t.contact.title}
+      description={t.contact.description}
     />
-    
+
     <form id="contact-form">
-      <input type="text" placeholder="Ваше имя" required>
-      <input type="tel" placeholder="Телефон" required>
-      <input type="email" class="full" placeholder="E-mail (необязательно)">
-      <textarea class="full" placeholder="Кратко опишите задачу"></textarea>
+      <input type="text" placeholder={t.contact.form.name} required>
+      <input type="tel" placeholder={t.contact.form.phone} required>
+      <input type="email" class="full" placeholder={t.contact.form.email}>
+      <textarea class="full" placeholder={t.contact.form.message}></textarea>
       <div class="full">
-        <button class="btn btn-primary" type="submit">Отправить</button>
-        <div class="form-note">Нажимая «Отправить», вы соглашаетесь с обработкой персональных данных.</div>
+        <button class="btn btn-primary" type="submit">{t.contact.form.submit}</button>
+        <div class="form-note">{t.contact.form.note}</div>
       </div>
     </form>
   </div>

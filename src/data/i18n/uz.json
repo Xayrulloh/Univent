@@ -25,7 +25,8 @@
       "products": "Assortiment pozitsiyalari",
       "stores": "Savdo nuqtalari",
       "leader": "Ventilyatsiya sohasida"
-    }
+    },
+    "art": "Havo oqimining vizualizatsiyasi"
   },
   "about": {
     "title": "Kompaniya haqida",
@@ -53,7 +54,8 @@
         "description": "Energiya samarali etkazib berish va issiqlikni qayta tiklash."
       }
     },
-    "more": "Batafsil →"
+    "more": "Batafsil →",
+    "top": "Top savdo"
   },
   "benefits": {
     "title": "Nega Univent",
@@ -72,6 +74,7 @@
   "branches": {
     "title": "Filiallar",
     "description": "Univent-ning eng yaqin savdo nuqtasini toping. Ko'rgazmada - QR kodni skanerlang va telefoningizda xaritani oling.",
+    "map": "Filiallar xaritasi (placeholder)",
     "cities": ["Toshkent", "Samarqand", "Buxoro", "Namangan", "Andijon", "Farg'ona", "Qo'qon", "Nukus", "Xiva", "Navoiy"]
   },
   "contact": {

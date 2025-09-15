@@ -25,7 +25,8 @@
       "products": "Assortment items",
       "stores": "Sales points",
       "leader": "In ventilation sector"
-    }
+    },
+    "art": "Visualization of air flow"
   },
   "about": {
     "title": "About Company",
@@ -53,7 +54,8 @@
         "description": "Energy efficient supply and heat recovery."
       }
     },
-    "more": "Learn More →"
+    "more": "Learn More →",
+    "top": "Top Sales"
   },
   "benefits": {
     "title": "Why Univent",
@@ -72,6 +74,7 @@
   "branches": {
     "title": "Branches",
     "description": "Find the nearest Univent sales point. At the exhibition - scan the QR and get the map on your phone.",
+    "map": "Map of branches (placeholder)",
     "cities": ["Tashkent", "Samarkand", "Bukhara", "Namangan", "Andijan", "Fergana", "Kokand", "Nukus", "Khiva", "Navoi"]
   },
   "contact": {
