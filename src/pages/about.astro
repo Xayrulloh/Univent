@@ -1,13 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeaderComponent from '../components/Header.astro';
-import HeroComponent from '../components/Hero.astro';
 import AboutComponent from '../components/About.astro';
-import ProductsComponent from '../components/Products.astro';
-import BenefitsComponent from '../components/Benefits.astro';
-import BranchesComponent from '../components/Branches.astro';
-import ContactComponent from '../components/Contact.astro';
 import FooterComponent from '../components/Footer.astro';
+
 import { getTranslation, getCurrentLocale } from '../utils/translations';
 
 const locale = getCurrentLocale(Astro.url);
@@ -15,16 +11,12 @@ const t = getTranslation(locale);
 ---
 
 <BaseLayout>
-  <HeaderComponent currentPage="home" />
-
+  <HeaderComponent currentPage="about" />
+  
   <main>
-    <HeroComponent />
     <AboutComponent />
-    <ProductsComponent />
-    <BenefitsComponent />
-    <BranchesComponent />
-    <ContactComponent />
+    <!-- Additional about page content can go here -->
   </main>
-
+  
   <FooterComponent />
 </BaseLayout>
