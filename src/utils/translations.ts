@@ -1,6 +1,6 @@
-import en from '../content/i18n/en.json';
-import ru from '../content/i18n/ru.json';
-import uz from '../content/i18n/uz.json';
+import en from '../data/i18n/en.json';
+import ru from '../data/i18n/ru.json';
+import uz from '../data/i18n/uz.json';
 
 export const translations = {
   ru,
