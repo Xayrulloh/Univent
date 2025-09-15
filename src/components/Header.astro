@@ -25,11 +25,11 @@ const t = getTranslation(locale);
     
     <nav>
       <ul>
-        <li><a href="/#about">{t.header.nav.about}</a></li>
-        <li><a href="/#products">{t.header.nav.products}</a></li>
-        <li><a href="/#benefits">{t.header.nav.benefits}</a></li>
-        <li><a href="/#branches">{t.header.nav.branches}</a></li>
-        <li><a href="/#contact">{t.header.nav.contact}</a></li>
+        <li><a href={`${locale !== 'ru' ? `/${locale}#about` : '#about'}`}>{t.header.nav.about}</a></li>
+        <li><a href={`${locale !== 'ru' ? `/${locale}#products` : '#products'}`}>{t.header.nav.products}</a></li>
+        <li><a href={`${locale !== 'ru' ? `/${locale}#benefits` : '#benefits'}`}>{t.header.nav.benefits}</a></li>
+        <li><a href={`${locale !== 'ru' ? `/${locale}#branches` : '#branches'}`}>{t.header.nav.branches}</a></li>
+        <li><a href={`${locale !== 'ru' ? `/${locale}#contact` : '#contact'}`}>{t.header.nav.contact}</a></li>
       </ul>
     </nav>
     
