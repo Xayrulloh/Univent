@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeaderComponent from '../../components/Header.astro';
-import Branches from '../../components/Branches.astro';
+import BranchesComponent from '../../components/Branches.astro';
 import FooterComponent from '../../components/Footer.astro';
 
 import { getTranslation, getCurrentLocale } from '../../utils/translations';
@@ -11,10 +11,10 @@ const t = getTranslation(locale);
 ---
 
 <BaseLayout>
-  <Header currentPage="branches" />
+  <HeaderComponent currentPage="branches" />
   
   <main>
-    <Branches />
+    <BranchesComponent />
     <!-- Additional about page content can go here -->
   </main>
   

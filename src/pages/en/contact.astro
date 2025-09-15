@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeaderComponent from '../../components/Header.astro';
-import Contact from '../../components/Contact.astro';
+import ContactComponent from '../../components/Contact.astro';
 import FooterComponent from '../../components/Footer.astro';
 
 import { getTranslation, getCurrentLocale } from '../../utils/translations';
@@ -11,10 +11,10 @@ const t = getTranslation(locale);
 ---
 
 <BaseLayout>
-  <Header currentPage="contact" />
+  <HeaderComponent currentPage="contact" />
   
   <main>
-    <Contact />
+    <ContactComponent />
     <!-- Additional about page content can go here -->
   </main>
   
