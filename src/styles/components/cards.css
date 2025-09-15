@@ -18,12 +18,12 @@
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0,0,0,.12);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 .card-visual {
   height: 140px;
-  background: linear-gradient(145deg,#111,#2b2b2b);
+  background: linear-gradient(145deg, #111, #2b2b2b);
   display: grid;
   place-items: center;
   position: relative;
@@ -44,7 +44,7 @@
   width: 56px;
   height: 56px;
   fill: #fff;
-  opacity: .95;
+  opacity: 0.95;
 }
 
 .card-body {
@@ -92,7 +92,7 @@
   .card {
     grid-column: span 12;
   }
-  
+
   .grid {
     gap: 16px;
   }

@@ -55,7 +55,7 @@
   border-radius: 8px;
   background: var(--brand-red);
   flex: 0 0 28px;
-  box-shadow: 0 6px 14px rgba(225,29,47,.35);
+  box-shadow: 0 6px 14px rgba(225, 29, 47, 0.35);
   position: relative;
 }
 
@@ -85,7 +85,13 @@
   height: 320px;
   border-radius: 20px;
   border: 1px solid #eee;
-  background: repeating-linear-gradient(45deg,#fafafa,#fafafa 12px,#f3f3f3 12px,#f3f3f3 24px);
+  background: repeating-linear-gradient(
+    45deg,
+    #fafafa,
+    #fafafa 12px,
+    #f3f3f3 12px,
+    #f3f3f3 24px
+  );
   margin-bottom: 24px;
 }
 
@@ -115,7 +121,7 @@
   .benefits-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .section-head {
     flex-direction: column;
     align-items: flex-start;
@@ -127,19 +133,19 @@
   .benefits-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .section-title {
     font-size: 26px;
   }
-  
+
   .map {
     height: 240px;
   }
-  
+
   .cities {
     justify-content: center;
   }
-  
+
   .pill {
     padding: 6px 10px;
     font-size: 13px;

@@ -4,7 +4,8 @@ form {
   gap: 12px;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   padding: 14px 12px;
   border-radius: 12px;
@@ -14,10 +15,11 @@ input, textarea {
   transition: var(--transition);
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: none;
   border-color: var(--brand-red);
-  box-shadow: 0 0 0 3px rgba(225,29,47,.1);
+  box-shadow: 0 0 0 3px rgba(225, 29, 47, 0.1);
 }
 
 textarea {
@@ -36,11 +38,13 @@ textarea {
 }
 
 /* Form validation styles */
-input:invalid, textarea:invalid {
+input:invalid,
+textarea:invalid {
   border-color: var(--red-500);
 }
 
-input:valid, textarea:valid {
+input:valid,
+textarea:valid {
   border-color: var(--gray-300);
 }
 
@@ -48,7 +52,7 @@ input:valid, textarea:valid {
   form {
     grid-template-columns: 1fr;
   }
-  
+
   .full {
     grid-column: span 1;
   }

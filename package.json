@@ -6,9 +6,13 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "biome:format": "biome format --write .",
+    "biome:lint": "biome lint --write . --error-on-warnings",
+    "biome:check": "biome check --write . --error-on-warnings"
   },
   "dependencies": {
+    "@biomejs/biome": "^2.2.4",
     "astro": "^5.13.6"
   }
 }

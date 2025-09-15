@@ -1,12 +1,12 @@
 /* Global variables and base styles */
-@import './globals/variables.css';
-@import './globals/base.css';
-@import './globals/utilities.css';
+@import "./globals/variables.css";
+@import "./globals/base.css";
+@import "./globals/utilities.css";
 
 /* Component styles */
-@import './components/header.css';
-@import './components/footer.css';
-@import './components/hero.css';
-@import './components/sections.css';
-@import './components/cards.css';
-@import './components/forms.css';
+@import "./components/header.css";
+@import "./components/footer.css";
+@import "./components/hero.css";
+@import "./components/sections.css";
+@import "./components/cards.css";
+@import "./components/forms.css";
