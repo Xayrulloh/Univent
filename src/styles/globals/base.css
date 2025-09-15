@@ -1,0 +1,52 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section defaults */
+section {
+  padding: 72px 0;
+  border-top: 1px solid #f1f1f1;
+  scroll-margin-top: 80px;
+}
+
+/* Responsive sections */
+@media (max-width: 680px) {
+  section {
+    padding: 48px 0;
+    scroll-margin-top: 60px;
+  }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+h1 { font-size: 48px; }
+h2 { font-size: 32px; }
+h3 { font-size: 24px; }
+
+@media (max-width: 680px) {
+  h1 { font-size: 38px; }
+  h2 { font-size: 26px; }
+  h3 { font-size: 20px; }
+}
