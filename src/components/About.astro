@@ -1,16 +1,20 @@
 ---
 import SectionHead from './SectionHead.astro';
+import { getCurrentLocale, getTranslation } from '../utils/translations';
+
+const locale = getCurrentLocale(Astro.url);
+const t = getTranslation(locale);
 ---
 
 <section id="about">
   <div class="container">
     <SectionHead 
-      title="О компании" 
-      description="Мы первые, кто вывел вентиляцию на системный уровень в Республике Узбекистан. Профессионализм, сертифицированные поставки и крупнейшее складское покрытие — основа доверия наших клиентов." 
+      title={t.about.title} 
+      description={t.about.description} 
     />
     
     <div class="hero-card">
-      <strong>Миссия:</strong> обеспечить доступ к качественным системам вентиляции для комфорта и здоровья людей, бизнеса и инфраструктуры.
+      <strong>{t.about.mission}</strong>
     </div>
   </div>
 </section>

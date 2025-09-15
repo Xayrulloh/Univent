@@ -1,69 +1,60 @@
 ---
-// Define props for active page highlighting
+import { getRelativeLocaleUrl, getAbsoluteLocaleUrl  } from 'astro:i18n';
+import { getCurrentLocale, getTranslation } from '../utils/translations';
+import { getCleanPath } from '../utils/clean-path';
+
 export interface Props {
-  currentPage?: string;
+  currentPage: string;
 }
 
-const { currentPage = '' } = Astro.props;
+const currentPath = getCleanPath(Astro.url.pathname);
+
+const { currentPage } = Astro.props;
+const locale = getCurrentLocale(Astro.url);
+const t = getTranslation(locale);
 ---
 
 <header>
   <div class="container nav">
-    <div class="brand">
-      <div class="logo" aria-label="Univent logo">
+    <a href={`/${locale}`} class="brand">
+      <div class="logo" aria-label={t.header.title}>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.5 7.2 7.5 1.1-5.4 5.3 1.3 7.4L12 19.1 5.1 23l1.3-7.4L1 10.3l7.5-1.1L12 2z"/></svg>
       </div>
-      <span>Univent</span>
-    </div>
+      <span>{t.header.title}</span>
+    </a>
     
     <nav>
       <ul>
-        <li>
-          <a 
-            href="#about" 
-            class={currentPage === 'about' ? 'active' : ''}
-          >
-            О компании
-          </a>
-        </li>
-        <li>
-          <a 
-            href="#products" 
-            class={currentPage === 'products' ? 'active' : ''}
-          >
-            Продукция
-          </a>
-        </li>
-        <li>
-          <a 
-            href="#benefits" 
-            class={currentPage === 'benefits' ? 'active' : ''}
-          >
-            Преимущества
-          </a>
-        </li>
-        <li>
-          <a 
-            href="#branches" 
-            class={currentPage === 'branches' ? 'active' : ''}
-          >
-            Филиалы
-          </a>
-        </li>
-        <li>
-          <a 
-            href="#contact" 
-            class={currentPage === 'contact' ? 'active' : ''}
-          >
-            Контакты
-          </a>
-        </li>
+        <li><a href={`/${locale}/about`} class:list={{active: currentPage === 'about'}}>{t.header.nav.about}</a></li>
+        <li><a href={`/${locale}/products`} class:list={{active: currentPage === 'products'}}>{t.header.nav.products}</a></li>
+        <li><a href={`/${locale}/benefits`} class:list={{active: currentPage === 'benefits'}}>{t.header.nav.benefits}</a></li>
+        <li><a href={`/${locale}/branches`} class:list={{active: currentPage === 'branches'}}>{t.header.nav.branches}</a></li>
+        <li><a href={`/${locale}/contact`} class:list={{active: currentPage === 'contact'}}>{t.header.nav.contact}</a></li>
       </ul>
     </nav>
     
     <div class="lang">
-      <button class="active" aria-pressed="true">RU</button>
-      <button aria-pressed="false">UZ</button>
+      <button 
+        onclick={`window.location.href='${getAbsoluteLocaleUrl('ru', currentPath)}'`}
+        class:list={{ active: locale === 'ru' }}
+      >
+        RU
+      </button>
+      <button 
+        onclick={`window.location.href='${getAbsoluteLocaleUrl('uz', currentPath)}'`}
+        class:list={{ active: locale === 'uz' }}
+      >
+        UZ
+      </button>
+      <button 
+        onclick={`window.location.href='${getAbsoluteLocaleUrl('en', currentPath)}'`}
+        class:list={{ active: locale === 'en' }}
+      >
+        EN
+      </button>
     </div>
+</div>
+    
+    <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
   </div>
 </header>

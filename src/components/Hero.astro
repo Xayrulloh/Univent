@@ -1,21 +1,24 @@
 ---
-// No props needed for now, but we can add later if needed
+import { getCurrentLocale, getTranslation } from '../utils/translations';
+
+const locale = getCurrentLocale(Astro.url);
+const t = getTranslation(locale);
 ---
 
 <section class="hero">
   <div class="container wrap">
     <div class="hero-left">
-      <span class="eyebrow">№1 в вентиляции</span>
-      <h1>Чистый воздух для всех</h1>
-      <p class="subtitle">Univent — профессиональная команда и лидер рынка вентиляции в Узбекистане. 1500+ наименований и 15+ точек продаж по стране.</p>
+      <span class="eyebrow">{t.hero.eyebrow}</span>
+      <h1>{t.hero.title}</h1>
+      <p class="subtitle">{t.hero.description}</p>
       <div class="cta">
-        <a href="#products" class="btn btn-primary">Каталог</a>
-        <a href="#contact" class="btn btn-ghost">Связаться</a>
+        <a href="#products" class="btn btn-primary">{t.hero.cta.catalog}</a>
+        <a href="#contact" class="btn btn-ghost">{t.hero.cta.contact}</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><strong>1500+</strong><span>Позиций ассортимента</span></div>
-        <div class="stat"><strong>15+</strong><span>Точек продаж</span></div>
-        <div class="stat"><strong>№1</strong><span>В сфере вентиляции</span></div>
+        <div class="stat"><strong>1500+</strong><span>{t.hero.stats.products}</span></div>
+        <div class="stat"><strong>15+</strong><span>{t.hero.stats.stores}</span></div>
+        <div class="stat"><strong>№1</strong><span>{t.hero.stats.leader}</span></div>
       </div>
     </div>
     <div class="hero-right">

@@ -1,14 +1,24 @@
 ---
+import { getRelativeLocaleUrl, getAbsoluteLocaleUrl } from 'astro:i18n';
+import { getTranslation, getCurrentLocale } from '../utils/translations';
 import '../styles/global.css';
+
+const locale = getCurrentLocale(Astro.url);
+const t = getTranslation(locale);
 ---
 
 <!DOCTYPE html>
-<html lang="ru">
+<html lang={locale}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Univent — Чистый воздух для всех</title>
-  <meta name="description" content="Univent — №1 в вентиляции в Узбекистане. 1500+ товаров, 15+ точек продаж. Чистый воздух для всех."/>
+  <title>{t.meta.title}</title>
+  <meta name="description" content={t.meta.description} />
+  
+  <link rel="alternate" hreflang="ru" href={getAbsoluteLocaleUrl('ru', Astro.url.pathname)} />
+  <link rel="alternate" hreflang="uz" href={getAbsoluteLocaleUrl('uz', Astro.url.pathname)} />
+  <link rel="alternate" hreflang="en" href={getAbsoluteLocaleUrl('en', Astro.url.pathname)} />
+  <link rel="alternate" hreflang="x-default" href={getAbsoluteLocaleUrl('ru', Astro.url.pathname)} />
 </head>
 <body>
   <slot />

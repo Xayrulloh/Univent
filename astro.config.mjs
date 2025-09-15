@@ -1,4 +1,3 @@
-// astro.config.mjs
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
@@ -6,7 +5,8 @@ export default defineConfig({
     defaultLocale: 'ru',
     locales: ['ru', 'uz', 'en'],
     routing: {
-      prefix: 'always'
+      prefix: 'always',
+      redirectToDefaultLocale: false
     }
-  }
+  },
 });

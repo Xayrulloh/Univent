@@ -9,17 +9,16 @@ export const translations = {
 } as const;
 
 export type Locale = keyof typeof translations;
-export type TranslationKey = keyof typeof ru;
 
-export function getTranslation(locale: Locale = 'ru') {
-  return translations[locale] || translations.ru;
+export function getTranslation(locale: string = 'ru') {
+  const safeLocale = (locale in translations) ? locale as Locale : 'ru';
+
+  return translations[safeLocale];
 }
 
 export function getCurrentLocale(url: URL): Locale {
   const pathParts = url.pathname.split('/').filter(Boolean);
-  const possibleLocale = pathParts[0] as Locale;
+  const possibleLocale = pathParts[0];
   
-  return Object.keys(translations).includes(possibleLocale) 
-    ? possibleLocale 
-    : 'ru';
+  return (possibleLocale in translations) ? possibleLocale as Locale : 'ru';
 }
