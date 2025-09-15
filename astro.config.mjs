@@ -1,5 +1,12 @@
-// @ts-check
+// astro.config.mjs
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  i18n: {
+    defaultLocale: 'ru',
+    locales: ['ru', 'uz', 'en'],
+    routing: {
+      prefix: 'always'
+    }
+  }
+});

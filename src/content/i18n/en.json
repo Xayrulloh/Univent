@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Univent — Clean Air for Everyone",
+    "description": "Univent — №1 in ventilation in Uzbekistan. 1500+ products, 15+ sales points. Clean air for everyone."
+  },
+  "header": {
+    "title": "Univent",
+    "nav": {
+      "about": "About Company",
+      "products": "Products",
+      "benefits": "Benefits",
+      "branches": "Branches",
+      "contact": "Contacts"
+    }
+  },
+  "hero": {
+    "eyebrow": "№1 in ventilation",
+    "title": "Clean Air for Everyone",
+    "description": "Univent — professional team and market leader in ventilation in Uzbekistan. 1500+ items and 15+ sales points across the country.",
+    "cta": {
+      "catalog": "Catalog",
+      "contact": "Contact Us"
+    },
+    "stats": {
+      "products": "Assortment items",
+      "stores": "Sales points",
+      "leader": "In ventilation sector"
+    }
+  },
+  "about": {
+    "title": "About Company",
+    "description": "We are the first to bring ventilation to a systematic level in the Republic of Uzbekistan. Professionalism, certified supplies and the largest warehouse coverage are the basis of our customers' trust.",
+    "mission": "Mission: to provide access to quality ventilation systems for the comfort and health of people, business and infrastructure."
+  },
+  "products": {
+    "title": "Product Categories",
+    "description": "Quick overview of key areas. Click to go to details (can be linked to catalog or PDF sheets).",
+    "items": {
+      "axial": {
+        "title": "Axial Fans",
+        "description": "Productive solutions for industry and commerce."
+      },
+      "centrifugal": {
+        "title": "Centrifugal Fans",
+        "description": "High pressure and flow stability."
+      },
+      "duct": {
+        "title": "Duct Fans",
+        "description": "Compact solutions for building ventilation systems."
+      },
+      "supply": {
+        "title": "Supply / Recuperators",
+        "description": "Energy efficient supply and heat recovery."
+      }
+    },
+    "more": "Learn More →"
+  },
+  "benefits": {
+    "title": "Why Univent",
+    "description": "Professionalism, scale and stability of supplies - what sets us apart in the market.",
+    "items": {
+      "first": "First in the field",
+      "first_desc": "We systematically develop the ventilation market in Uzbekistan.",
+      "products": "1500+ items",
+      "products_desc": "Widest assortment for any tasks.",
+      "stores": "15+ sales points",
+      "stores_desc": "Nationwide coverage, quick availability.",
+      "certification": "Certification",
+      "certification_desc": "Official supplies and quality control."
+    }
+  },
+  "branches": {
+    "title": "Branches",
+    "description": "Find the nearest Univent sales point. At the exhibition - scan the QR and get the map on your phone.",
+    "cities": ["Tashkent", "Samarkand", "Bukhara", "Namangan", "Andijan", "Fergana", "Kokand", "Nukus", "Khiva", "Navoi"]
+  },
+  "contact": {
+    "title": "Contacts",
+    "description": "Leave a request - we will help you find a solution for your task.",
+    "form": {
+      "name": "Your Name",
+      "phone": "Phone",
+      "email": "E-mail (optional)",
+      "message": "Briefly describe your task",
+      "submit": "Send",
+      "note": "By clicking \"Send\", you agree to the processing of personal data."
+    }
+  },
+  "footer": {
+    "copyright": "© Univent. All rights reserved."
+  }
+}

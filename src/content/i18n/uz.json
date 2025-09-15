@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Univent — Hammaga toza havo",
+    "description": "Univent — O'zbekistonda ventilyatsiya sohasida №1. 1500+ mahsulot, 15+ savdo nuqtasi. Hammaga toza havo."
+  },
+  "header": {
+    "title": "Univent",
+    "nav": {
+      "about": "Kompaniya haqida",
+      "products": "Mahsulotlar",
+      "benefits": "Afzalliklar",
+      "branches": "Filiallar",
+      "contact": "Kontaktlar"
+    }
+  },
+  "hero": {
+    "eyebrow": "Ventilyatsiyada №1",
+    "title": "Hammaga toza havo",
+    "description": "Univent — O'zbekistondagi ventilyatsiya bozorining professional jamoasi va yetakchisi. 1500+ mahsulot nomi va mamlakat bo'ylab 15+ savdo nuqtasi.",
+    "cta": {
+      "catalog": "Katalog",
+      "contact": "Bog'lanish"
+    },
+    "stats": {
+      "products": "Assortiment pozitsiyalari",
+      "stores": "Savdo nuqtalari",
+      "leader": "Ventilyatsiya sohasida"
+    }
+  },
+  "about": {
+    "title": "Kompaniya haqida",
+    "description": "Biz O'zbekiston Respublikasida ventilyatsiyani tizimli darajaga olib chiqqan birinchilarmiz. Professionalizm, sertifikatlangan etkazib berish va eng katta omborlov qoplamasi - bu mijozlarimizning ishonchining asosidir.",
+    "mission": "Vazifa: odamlar, biznes va infratuzilma uchun qulaylik va sog'liq uchun sifatli ventilyatsiya tizimlariga kirishni ta'minlash."
+  },
+  "products": {
+    "title": "Mahsulot toifalari",
+    "description": "Asosiy yo'nalishlarning tezkor ko'rib chiqilishi. Batafsil ma'lumot olish uchun bosing (katalog yoki PDF varaqlar bilan bog'lanish mumkin).",
+    "items": {
+      "axial": {
+        "title": "Eksenli ventilyatorlar",
+        "description": "Sanoat va savdo uchun samarali yechimlar."
+      },
+      "centrifugal": {
+        "title": "Markazdan qochma ventilyatorlar",
+        "description": "Yuqori bosim va oqimning barqarorligi."
+      },
+      "duct": {
+        "title": "Kanalli ventilyatorlar",
+        "description": "Binolarning ventilyatsiya tizimlari uchun ixcham yechimlar."
+      },
+      "supply": {
+        "title": "Yetkazib berish / Rekuperatorlar",
+        "description": "Energiya samarali etkazib berish va issiqlikni qayta tiklash."
+      }
+    },
+    "more": "Batafsil →"
+  },
+  "benefits": {
+    "title": "Nega Univent",
+    "description": "Professionalizm, masshtab va etkazib berishning barqarorligi - bozorda bizni ajralib turadigan narsa.",
+    "items": {
+      "first": "Sohadagi birinchilar",
+      "first_desc": "O'zbekistonda ventilyatsiya bozorini tizimli rivojlantirmoqdamiz.",
+      "products": "1500+ pozitsiya",
+      "products_desc": "Har qanday vazifalar uchun eng keng assortiment.",
+      "stores": "15+ savdo nuqtasi",
+      "stores_desc": "Butun mamlakat bo'ylab qamrov, tezkor mavjudlik.",
+      "certification": "Sertifikatlash",
+      "certification_desc": "Rasmiy etkazib berish va sifat nazorati."
+    }
+  },
+  "branches": {
+    "title": "Filiallar",
+    "description": "Univent-ning eng yaqin savdo nuqtasini toping. Ko'rgazmada - QR kodni skanerlang va telefoningizda xaritani oling.",
+    "cities": ["Toshkent", "Samarqand", "Buxoro", "Namangan", "Andijon", "Farg'ona", "Qo'qon", "Nukus", "Xiva", "Navoiy"]
+  },
+  "contact": {
+    "title": "Kontaktlar",
+    "description": "Ariza qoldiring - biz sizning vazifangizga yechim topishga yordam beramiz.",
+    "form": {
+      "name": "Ismingiz",
+      "phone": "Telefon",
+      "email": "E-mail (ixtiyoriy)",
+      "message": "Vazifangizni qisqacha tasvirlang",
+      "submit": "Yuborish",
+      "note": "«Yuborish» tugmasini bosish orqali siz shaxsiy ma'lumotlaringizni qayta ishlashga rozilik bildirasiz."
+    }
+  },
+  "footer": {
+    "copyright": "© Univent. Barcha huquqlar himoyalangan."
+  }
+}
