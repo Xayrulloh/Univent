@@ -116,10 +116,52 @@
   transform: translateY(-1px);
 }
 
-/* Responsive styles */
-@media (max-width: 980px) {
+/* ===== RESPONSIVE STYLES ===== */
+
+/* Large tablets and small desktops (769px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
   .benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid for iPad */
+    gap: 16px;
+  }
+
+  .adv {
+    padding: 18px;
+  }
+
+  .adv h4 {
+    font-size: 17px;
+  }
+
+  .adv p {
+    font-size: 14px;
+  }
+}
+
+/* Medium tablets (681px - 768px) */
+@media (max-width: 768px) and (min-width: 681px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid */
+    gap: 14px;
+  }
+
+  .adv {
+    padding: 16px;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .adv i {
+    margin: 0 auto;
+  }
+
+  .adv h4 {
+    font-size: 16px;
+  }
+
+  .adv p {
+    font-size: 13px;
   }
 
   .section-head {
@@ -127,11 +169,69 @@
     align-items: flex-start;
     gap: 12px;
   }
+
+  .section-title {
+    font-size: 28px;
+  }
 }
 
-@media (max-width: 680px) {
+/* Small tablets (601px - 680px) */
+@media (max-width: 680px) and (min-width: 601px) {
   .benefits-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid for small tablets */
+    gap: 12px;
+  }
+
+  .adv {
+    padding: 14px;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .adv i {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+  }
+
+  .adv h4 {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .adv p {
+    font-size: 12px;
+  }
+}
+
+/* Mobile devices (below 600px) */
+@media (max-width: 600px) {
+  .benefits-grid {
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 12px;
+  }
+
+  .adv {
+    padding: 16px;
+    flex-direction: row; /* Keep horizontal layout on mobile */
+    gap: 12px;
+    text-align: left;
+  }
+
+  .adv i {
+    width: 26px;
+    height: 26px;
+    flex: 0 0 26px;
+  }
+
+  .adv h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .adv p {
+    font-size: 13px;
   }
 
   .section-title {
@@ -149,5 +249,57 @@
   .pill {
     padding: 6px 10px;
     font-size: 13px;
+  }
+}
+
+/* Very small mobile devices */
+@media (max-width: 480px) {
+  .benefits-grid {
+    gap: 10px;
+  }
+
+  .adv {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .adv i {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+  }
+
+  .adv h4 {
+    font-size: 15px;
+  }
+
+  .adv p {
+    font-size: 12px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .adv {
+    padding: 12px;
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .adv i {
+    margin: 0 auto;
+  }
+
+  .adv h4 {
+    font-size: 14px;
+  }
+
+  .adv p {
+    font-size: 11px;
   }
 }
