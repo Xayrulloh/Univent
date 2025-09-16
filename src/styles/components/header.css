@@ -97,6 +97,11 @@ nav a.active {
   font-size: 1.5rem;
   cursor: pointer;
   padding: 8px;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
 }
 
 /* Responsive Header */
@@ -114,19 +119,22 @@ nav a.active {
 @media (max-width: 680px) {
   .nav {
     height: 60px;
+    position: relative;
   }
 
   nav ul {
     display: none;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 60px;
     left: 0;
     right: 0;
     background: white;
     padding: 1rem;
     box-shadow: var(--shadow);
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
+    z-index: 1000;
+    margin: 0;
   }
 
   nav ul.open {
@@ -138,6 +146,212 @@ nav a.active {
   }
 
   .lang {
-    display: none; /* Hide language switcher on mobile or implement mobile version */
+    display: none;
+  }
+
+  .brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* iPad specific styles (810px width) */
+@media (max-width: 810px) and (min-width: 681px) {
+  .nav {
+    height: 65px;
+  }
+
+  nav ul {
+    gap: 10px;
+  }
+
+  nav a {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .lang {
+    gap: 6px;
+  }
+
+  .lang button {
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+
+  .brand span {
+    font-size: 15px;
+  }
+
+  .logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Larger tablets landscape */
+@media (max-width: 1024px) and (min-width: 811px) {
+  nav ul {
+    gap: 15px;
+  }
+
+  nav a {
+    padding: 9px 11px;
+    font-size: 14px;
+  }
+
+  .lang button {
+    padding: 7px 9px;
+  }
+}
+
+/* Mobile language switcher */
+.mobile-lang {
+  display: none;
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  margin-top: 1rem;
+}
+
+.mobile-lang .lang {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+@media (max-width: 680px) {
+  .mobile-lang {
+    display: block;
+  }
+
+  nav ul {
+    top: 60px;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+}
+
+/* iPad Specific Styles (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .nav {
+    height: 60px;
+    padding: 0 15px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand span {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logo svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  nav ul {
+    gap: 8px;
+  }
+
+  nav a {
+    padding: 6px 8px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .lang {
+    gap: 6px;
+  }
+
+  .lang button {
+    padding: 6px 8px;
+    font-size: 12px;
+    min-width: 40px;
+  }
+}
+
+/* iPad Pro and larger tablets */
+@media (max-width: 1366px) and (min-width: 1025px) {
+  .nav {
+    height: 65px;
+  }
+
+  nav ul {
+    gap: 12px;
+  }
+
+  nav a {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .lang button {
+    padding: 7px 9px;
+    font-size: 13px;
+  }
+}
+
+/* iPad Mini and smaller tablets */
+@media (max-width: 768px) and (min-width: 481px) {
+  .nav {
+    height: 58px;
+    padding: 0 12px;
+  }
+
+  .brand span {
+    font-size: 15px;
+  }
+
+  .logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  nav ul {
+    gap: 6px;
+  }
+
+  nav a {
+    padding: 5px 7px;
+    font-size: 12px;
+  }
+
+  .lang {
+    gap: 4px;
+  }
+
+  .lang button {
+    padding: 5px 7px;
+    font-size: 11px;
+    min-width: 36px;
+  }
+}
+
+/* Very narrow tablets (portrait) */
+@media (max-width: 600px) and (min-width: 481px) {
+  nav ul li:nth-child(n + 4) {
+    display: none;
+  }
+
+  .brand span {
+    display: none;
+  }
+
+  .logo {
+    margin-right: 0;
   }
 }

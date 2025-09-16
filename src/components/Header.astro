@@ -30,6 +30,20 @@ const t = getTranslation(locale);
         <li><a href={`${locale !== 'ru' ? `/${locale}#benefits` : '#benefits'}`}>{t.header.nav.benefits}</a></li>
         <li><a href={`${locale !== 'ru' ? `/${locale}#branches` : '#branches'}`}>{t.header.nav.branches}</a></li>
         <li><a href={`${locale !== 'ru' ? `/${locale}#contact` : '#contact'}`}>{t.header.nav.contact}</a></li>
+        
+        <li class="mobile-lang">
+          <div class="lang">
+            <button onclick={`window.location.href='${getAbsoluteLocaleUrl('ru', currentPath)}'`} class:list={{ active: locale === 'ru' }}>
+              RU
+            </button>
+            <button onclick={`window.location.href='${getAbsoluteLocaleUrl('uz', currentPath)}'`} class:list={{ active: locale === 'uz' }}>
+              UZ
+            </button>
+            <button onclick={`window.location.href='${getAbsoluteLocaleUrl('en', currentPath)}'`} class:list={{ active: locale === 'en' }}>
+              EN
+            </button>
+          </div>
+        </li>
       </ul>
     </nav>
 
@@ -58,3 +72,43 @@ const t = getTranslation(locale);
     <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
   </div>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navMenu = document.querySelector('nav ul');
+    
+    if (menuBtn && navMenu) {
+      menuBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        navMenu.classList.toggle('open');
+
+        const isExpanded: any = navMenu.classList.contains('open');
+
+        menuBtn.setAttribute('aria-expanded', isExpanded);
+        menuBtn.textContent = isExpanded ? '✕' : '☰';
+      });
+
+      document.addEventListener('click', (e: any) => {
+        if (!e?.target) return false;
+
+        if (!e.target.closest('nav') && !e.target.closest('.mobile-menu-btn')) {
+          navMenu.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          menuBtn.textContent = '☰';
+        }
+      });
+
+      const navLinks = document.querySelectorAll('nav a');
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          menuBtn.textContent = '☰';
+        });
+      });
+    }
+  });
+</script>
