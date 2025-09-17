@@ -14,10 +14,35 @@ const t = getTranslation(locale);
     />
 
     <form id="contact-form" method="POST" action="/api/contact-form">
-      <input type="text" name="name" placeholder={t.contact.form.name} required>
-      <input type="tel" name="phone" placeholder={t.contact.form.phone} required>
-      <input type="email" name="email" class="full" placeholder={t.contact.form.email}>
-      <textarea name="message" class="full" placeholder={t.contact.form.message}></textarea>
+      <input 
+        type="text" 
+        name="name" 
+        placeholder={t.contact.form.name} 
+        required
+        minlength="2"
+        maxlength="100"
+      >
+      <input 
+        type="tel" 
+        name="phone" 
+        placeholder={t.contact.form.phone} 
+        required
+        minlength="7"
+        maxlength="20"
+      >
+      <input 
+        type="email" 
+        name="email" 
+        class="full" 
+        placeholder={t.contact.form.email}
+        maxlength="255"
+      >
+      <textarea 
+        name="message" 
+        class="full" 
+        placeholder={t.contact.form.message}
+        maxlength="1000"
+      ></textarea>
       <div class="full">
         <button class="btn btn-primary" type="submit">{t.contact.form.submit}</button>
         <div class="form-note">{t.contact.form.note}</div>
