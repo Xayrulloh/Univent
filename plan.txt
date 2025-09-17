@@ -8,3 +8,4 @@
 5. Some modifications by Shomuxid bro
 6. SEO meta data
 7. Responsive design ✅
+8. Remove AI left comments
