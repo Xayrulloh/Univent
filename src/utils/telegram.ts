@@ -6,7 +6,9 @@ export interface TelegramMessage {
   parse_mode?: string;
 }
 
-export async function sendTelegramMessage(message: TelegramMessage): Promise<boolean> {
+export async function sendTelegramMessage(
+  message: TelegramMessage,
+): Promise<boolean> {
   try {
     const response = await fetch(API_URL, {
       method: 'POST',

@@ -1,24 +1,26 @@
 import type { APIRoute } from 'astro';
-import { sendTelegramMessage, formatContactMessage } from '../../utils/telegram';
 import { CHAT_ID } from '../../utils/constants';
 import { getPathLanguage } from '../../utils/get-path-language';
+import {
+  formatContactMessage,
+  sendTelegramMessage,
+} from '../../utils/telegram';
 
 export const POST: APIRoute = async ({ redirect, request }) => {
-
   const formData = await request.text();
   const params = new URLSearchParams(formData);
 
   const [name, phone, email, message] = params.values();
-  let paths = request.headers.get('referer')
+  const paths = request.headers.get('referer');
 
-  let language = getPathLanguage(paths)
+  const language = getPathLanguage(paths);
 
   const formattedMessage = formatContactMessage({
     name,
     phone,
     email,
     message,
-    language
+    language,
   });
 
   await sendTelegramMessage({
@@ -26,7 +28,7 @@ export const POST: APIRoute = async ({ redirect, request }) => {
     text: formattedMessage,
   });
 
-  return redirect(`/${language ? language : ''}/#contact`, 302)
+  return redirect(`/${language ? language : ''}/#contact`, 302);
 };
 
 export const prerender = false;

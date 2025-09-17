@@ -20,95 +20,58 @@
 /* Hero card (used in About section) */
 .hero-card {
   background: #fff;
-  border: 1px
-    solid
-    #eee;
-  border-radius: var(
-    --radius
-  );
+  border: 1px solid #eee;
+  border-radius: var(--radius);
   padding: 24px;
-  box-shadow: var(
-    --shadow
-  );
+  box-shadow: var(--shadow);
 }
 
 /* Benefits grid */
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(
-    4,
-    1fr
-  );
+  grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
 
 .adv {
   background: #fff;
-  border: 1px
-    dashed
-    #e8e8e8;
+  border: 1px dashed #e8e8e8;
   border-radius: 18px;
   padding: 20px;
   display: flex;
   gap: 14px;
   align-items: flex-start;
-  transition: var(
-    --transition
-  );
+  transition: var(--transition);
 }
 
 .adv:hover {
-  transform: translateY(
-    -2px
-  );
-  border-color: var(
-    --brand-red
-  );
+  transform: translateY(-2px);
+  border-color: var(--brand-red);
 }
 
 .adv i {
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background: var(
-    --brand-red
-  );
-  flex: 0
-    0
-    28px;
-  box-shadow: 0
-    6px
-    14px
-    rgba(
-      225,
-      29,
-      47,
-      0.35
-    );
+  background: var(--brand-red);
+  flex: 0 0 28px;
+  box-shadow: 0 6px 14px rgba(225, 29, 47, 0.35);
   position: relative;
 }
 
-.adv
-  i::before {
+.adv i::before {
   content: "✓";
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(
-    -50%,
-    -50%
-  );
+  transform: translate(-50%, -50%);
   color: white;
   font-weight: bold;
   font-style: normal;
 }
 
-.adv
-  h4 {
-  margin: 0
-    0
-    6px
-    0;
+.adv h4 {
+  margin: 0 0 6px 0;
   font-size: 18px;
 }
 
@@ -121,18 +84,13 @@
 .map {
   height: 320px;
   border-radius: 20px;
-  border: 1px
-    solid
-    #eee;
+  border: 1px solid #eee;
   background: repeating-linear-gradient(
     45deg,
     #fafafa,
-    #fafafa
-      12px,
-    #f3f3f3
-      12px,
-    #f3f3f3
-      24px
+    #fafafa 12px,
+    #f3f3f3 12px,
+    #f3f3f3 24px
   );
   margin-bottom: 24px;
 }
@@ -144,64 +102,39 @@
 }
 
 .pill {
-  border: 1px
-    solid
-    #eee;
+  border: 1px solid #eee;
   border-radius: 999px;
-  padding: 8px
-    12px;
+  padding: 8px 12px;
   background: #fff;
   font-size: 14px;
-  transition: var(
-    --transition
-  );
+  transition: var(--transition);
 }
 
 .pill:hover {
-  border-color: var(
-    --brand-red
-  );
-  color: var(
-    --brand-red
-  );
-  transform: translateY(
-    -1px
-  );
+  border-color: var(--brand-red);
+  color: var(--brand-red);
+  transform: translateY(-1px);
 }
 
 /* Form status styles */
 .form-success {
-  background: var(
-    --muted
-  );
-  border: 1px
-    solid
-    #4ade80;
-  border-radius: var(
-    --radius
-  );
+  background: var(--muted);
+  border: 1px solid #4ade80;
+  border-radius: var(--radius);
   padding: 1.5rem;
   margin-bottom: 2rem;
   text-align: center;
 }
 
-.form-success
-  h3 {
+.form-success h3 {
   color: #16a34a;
-  margin: 0
-    0
-    0.5rem
-    0;
+  margin: 0 0 0.5rem 0;
 }
 
 .form-error {
   background: #fef2f2;
-  border: 1px
-    solid
-    #fecaca;
-  border-radius: var(
-    --radius
-  );
+  border: 1px solid #fecaca;
+  border-radius: var(--radius);
   padding: 1rem;
   margin-bottom: 1rem;
   color: #dc2626;
@@ -229,10 +162,7 @@ textarea:valid {
 /* Large tablets and small desktops (769px - 1024px) */
 @media (max-width: 1024px) and (min-width: 769px) {
   .benefits-grid {
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* 2x2 grid for iPad */
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid for iPad */
     gap: 16px;
   }
 
@@ -240,13 +170,11 @@ textarea:valid {
     padding: 18px;
   }
 
-  .adv
-    h4 {
+  .adv h4 {
     font-size: 17px;
   }
 
-  .adv
-    p {
+  .adv p {
     font-size: 14px;
   }
 }
@@ -254,10 +182,7 @@ textarea:valid {
 /* Medium tablets (681px - 768px) */
 @media (max-width: 768px) and (min-width: 681px) {
   .benefits-grid {
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* 2x2 grid */
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid */
     gap: 14px;
   }
 
@@ -268,19 +193,15 @@ textarea:valid {
     text-align: center;
   }
 
-  .adv
-    i {
-    margin: 0
-      auto;
+  .adv i {
+    margin: 0 auto;
   }
 
-  .adv
-    h4 {
+  .adv h4 {
     font-size: 16px;
   }
 
-  .adv
-    p {
+  .adv p {
     font-size: 13px;
   }
 
@@ -298,10 +219,7 @@ textarea:valid {
 /* Small tablets (601px - 680px) */
 @media (max-width: 680px) and (min-width: 601px) {
   .benefits-grid {
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* 2x2 grid for small tablets */
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid for small tablets */
     gap: 12px;
   }
 
@@ -312,23 +230,18 @@ textarea:valid {
     text-align: center;
   }
 
-  .adv
-    i {
+  .adv i {
     width: 24px;
     height: 24px;
-    flex: 0
-      0
-      24px;
+    flex: 0 0 24px;
   }
 
-  .adv
-    h4 {
+  .adv h4 {
     font-size: 15px;
     margin-bottom: 4px;
   }
 
-  .adv
-    p {
+  .adv p {
     font-size: 12px;
   }
 }
@@ -347,23 +260,18 @@ textarea:valid {
     text-align: left;
   }
 
-  .adv
-    i {
+  .adv i {
     width: 26px;
     height: 26px;
-    flex: 0
-      0
-      26px;
+    flex: 0 0 26px;
   }
 
-  .adv
-    h4 {
+  .adv h4 {
     font-size: 16px;
     margin-bottom: 4px;
   }
 
-  .adv
-    p {
+  .adv p {
     font-size: 13px;
   }
 
@@ -380,8 +288,7 @@ textarea:valid {
   }
 
   .pill {
-    padding: 6px
-      10px;
+    padding: 6px 10px;
     font-size: 13px;
   }
 }
@@ -397,22 +304,17 @@ textarea:valid {
     gap: 10px;
   }
 
-  .adv
-    i {
+  .adv i {
     width: 24px;
     height: 24px;
-    flex: 0
-      0
-      24px;
+    flex: 0 0 24px;
   }
 
-  .adv
-    h4 {
+  .adv h4 {
     font-size: 15px;
   }
 
-  .adv
-    p {
+  .adv p {
     font-size: 12px;
   }
 
@@ -430,19 +332,15 @@ textarea:valid {
     gap: 8px;
   }
 
-  .adv
-    i {
-    margin: 0
-      auto;
+  .adv i {
+    margin: 0 auto;
   }
 
-  .adv
-    h4 {
+  .adv h4 {
     font-size: 14px;
   }
 
-  .adv
-    p {
+  .adv p {
     font-size: 11px;
   }
 }
