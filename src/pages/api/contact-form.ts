@@ -28,7 +28,7 @@ export const POST: APIRoute = async ({ redirect, request }) => {
     text: formattedMessage,
   });
 
-  return redirect(`/${language ? language : ''}/#contact`, 302);
+  return redirect(language ? `/${language}/#contact` : '/#contact', 302);
 };
 
 export const prerender = false;

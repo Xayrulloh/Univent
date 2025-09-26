@@ -12,6 +12,7 @@
     "biome:check": "biome check --write . --error-on-warnings"
   },
   "dependencies": {
+    "@astrojs/vercel": "^8.2.8",
     "@biomejs/biome": "^2.2.4",
     "astro": "^5.13.6"
   }
