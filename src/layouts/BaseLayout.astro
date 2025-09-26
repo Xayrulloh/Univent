@@ -1,7 +1,8 @@
 ---
-import { getRelativeLocaleUrl, getAbsoluteLocaleUrl } from 'astro:i18n';
+import { getAbsoluteLocaleUrl } from 'astro:i18n';
 import { getTranslation, getCurrentLocale } from '../utils/translations';
 import '../styles/global.css';
+import  SpeedInsights  from "@vercel/speed-insights/astro"
 
 const locale = getCurrentLocale(Astro.url);
 const t = getTranslation(locale);
@@ -23,5 +24,6 @@ const t = getTranslation(locale);
 </head>
 <body>
   <slot />
+  <SpeedInsights />
 </body>
 </html>
