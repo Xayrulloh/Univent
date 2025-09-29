@@ -13,11 +13,13 @@ const t = getTranslation(locale);
       description={t.contact.description}
     />
 
-    <form id="contact-form" method="POST" 
-    data-success-message={t.contact.form.success_message}
-    data-error-message={t.contact.form.error_message}
-    data-sending-text={t.contact.form.sending}
-    data-submit-text={t.contact.form.submit}
+    <form 
+      id="contact-form" 
+      method="POST" 
+      data-success-message={t.contact.form.success_message}
+      data-error-message={t.contact.form.error_message}
+      data-sending-text={t.contact.form.sending}
+      data-submit-text={t.contact.form.submit}
     >
       <input 
         type="text" 
