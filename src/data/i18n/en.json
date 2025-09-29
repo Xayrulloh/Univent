@@ -87,10 +87,9 @@
       "message": "Briefly describe your task",
       "submit": "Send",
       "note": "By clicking \"Send\", you agree to the processing of personal data.",
-      "success_title": "Thank You!",
       "success_message": "Your message has been sent successfully. We will contact you soon.",
-      "error_required": "Please fill in all required fields",
-      "error_send": "Failed to send message. Please try again."
+      "error_message": "Your message could not be sent. Please try again later.",
+      "sending": "Sending..."
     }
   },
   "footer": {

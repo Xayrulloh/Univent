@@ -87,10 +87,9 @@
       "message": "Vazifangizni qisqacha tasvirlang",
       "submit": "Yuborish",
       "note": "«Yuborish» tugmasini bosish orqali siz shaxsiy ma'lumotlaringizni qayta ishlashga rozilik bildirasiz.",
-      "success_title": "Rahmat!",
-      "success_message": "Xabar siz muvaffaqiyat yuborilgan. Biz bilan tez bog'lanamiz.",
-      "error_required": "Barcha maydon joylarni to'ldirilgan.",
-      "error_send": "Xabar yuborilmadi. Iltimos, qayta qayta harakat qilib qaytarilishingiz."
+      "success_message": "Xabar muvaffaqiyatli yuborildi. Siz bilan tez orada bog'lanamiz.",
+      "error_message": "Xabaringiz yuborilmadi. Iltimos, qayta urinib ko'ring.",
+      "sending": "Yuborilmoqda..."
     }
   },
   "footer": {

@@ -13,7 +13,12 @@ const t = getTranslation(locale);
       description={t.contact.description}
     />
 
-    <form id="contact-form">
+    <form id="contact-form" method="POST" 
+    data-success-message={t.contact.form.success_message}
+    data-error-message={t.contact.form.error_message}
+    data-sending-text={t.contact.form.sending}
+    data-submit-text={t.contact.form.submit}
+    >
       <input 
         type="text" 
         name="name" 
@@ -52,91 +57,89 @@ const t = getTranslation(locale);
 </section>
 
 <script>
-import { CHAT_ID } from "../utils/constants";
-import { formatContactMessage, sendTelegramMessage } from "../utils/telegram";
+  import { CHAT_ID } from "../utils/constants";
+  import { formatContactMessage, sendTelegramMessage } from "../utils/telegram";
 
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('contact-form');
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
 
-  if (!form) return;
+    if (!form) return;
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+    const successMessage = form.getAttribute('data-success-message')!
+    const errorMessage = form.getAttribute('data-error-message')!
+    const sendingText = form.getAttribute('data-sending-text')!
+    const submitText = form.getAttribute('data-submit-text')!
 
-    const submitButton = form.querySelector('button[type="submit"]');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-    if (!submitButton) return;
+      const submitButton: any = form.querySelector('button[type="submit"]');
 
-    try {
+      if (!submitButton) return;
 
-      const formData = new FormData(form as HTMLFormElement);
+      try {
+        submitButton.disabled = true;
+        submitButton.textContent = sendingText
 
-      const {name, phone, email, message} = Object.fromEntries(formData.entries());
+        const formData = new FormData(form as HTMLFormElement);
 
-      const formattedMessage = formatContactMessage({
-        name,
-        phone,
-        email,
-        message,
-      });
+        const name = String(formData.get('name') || '');
+        const phone = String(formData.get('phone') || '');
+        const email = String(formData.get('email') || '');
+        const message = String(formData.get('message') || '');
 
-      const response = await sendTelegramMessage({
-        chat_id: CHAT_ID,
-        text: formattedMessage,
-      });
+        const formattedMessage = formatContactMessage({
+          name,
+          phone,
+          email,
+          message,
+        });
 
-      if (response) {
-        showSuccessNotification('Message sent successfully!');
+        const response = await sendTelegramMessage({
+          chat_id: CHAT_ID,
+          text: formattedMessage,
+        });
 
-        form.reset();
+        if (response) {
+          showSuccessNotification(successMessage);
+
+          (form as HTMLFormElement).reset();
+        }
+
+      } catch (error) {
+        console.error('Form submission error:', error);
+        showErrorNotification(errorMessage);
+      } finally {
+        const submitButton: any = form.querySelector('button[type="submit"]');
+
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = submitText;
+        }
       }
+    });
 
-    } catch (error) {}
-  });
+    function showSuccessNotification(message: string) {
+      showNotification(message, 'success');
+    }
 
-  function showSuccessNotification(message: string) {
-    const notification = document.createElement('div');
-    notification.textContent = message;
-    notification.style.cssText = `
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #10b981;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 6px;
-      z-index: 1000;
-      animation: slideIn 0.3s ease-out;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    `;
+    function showErrorNotification(message: string) {
+      showNotification(message, 'error');
+    }
 
-    document.body.appendChild(notification);
+    function showNotification(message: string, type: 'success' | 'error') {
+      const notification = document.createElement('div');
 
-    setTimeout(() => {
-      notification.style.animation = 'slideOut 0.3s ease-in';
+      notification.textContent = message;
+      notification.className = `notification notification-${type}`;
+
+      document.body.appendChild(notification);
 
       setTimeout(() => {
         if (notification.parentNode) {
           notification.parentNode.removeChild(notification);
         }
-      }, 300);
-
-    }, 3000);
-  }
-
-  const style = document.createElement('style');
-
-  style.textContent = `
-    @keyframes slideIn {
-      from { transform: translateX(100%); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
+      }, 3000);
     }
-    @keyframes slideOut {
-      from { transform: translateX(0); opacity: 1; }
-      to { transform: translateX(100%); opacity: 0; }
-    }
-  `;
-
-  document.head.appendChild(style);
-});
+  });
 </script>
