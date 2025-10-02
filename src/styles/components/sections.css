@@ -1,20 +1,33 @@
 /* Section Head component */
 .section-head {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 40px;
   margin-bottom: 28px;
 }
 
 .section-title {
-  font-size: 32px;
+  font-size: 36px;
   margin: 0;
+  line-height: 1.1;
+  font-weight: 800;
+  color: var(--text);
+  flex: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .section-desc {
   color: #555;
   max-width: 70ch;
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 0;
+  flex: 2;
+  text-align: left;
 }
 
 /* Hero card (used in About section) */
@@ -229,6 +242,21 @@ textarea:valid {
 
   .adv p {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 980px) {
+  .section-head {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .section-title,
+  .section-desc {
+    text-align: center;
+    flex: none;
+    width: 100%;
   }
 }
 
