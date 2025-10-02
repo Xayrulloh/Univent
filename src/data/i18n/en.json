@@ -92,6 +92,9 @@
       "sending": "Sending..."
     }
   },
+  "partners": {
+    "title": "Partners"
+  },
   "footer": {
     "copyright": "© Univent. All rights reserved."
   }

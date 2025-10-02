@@ -9,6 +9,7 @@ import BranchesComponent from '../components/Branches.astro';
 import ContactComponent from '../components/Contact.astro';
 import FooterComponent from '../components/Footer.astro';
 import { getTranslation, getCurrentLocale } from '../utils/translations';
+import PartnersComponent from '../components/Partners.astro';
 
 const locale = getCurrentLocale(Astro.url);
 const t = getTranslation(locale);
@@ -23,6 +24,7 @@ const t = getTranslation(locale);
     <ProductsComponent />
     <BenefitsComponent />
     <BranchesComponent />
+    <PartnersComponent />
     <ContactComponent />
   </main>
 
