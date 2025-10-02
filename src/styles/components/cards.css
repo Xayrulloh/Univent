@@ -27,9 +27,34 @@
   display: grid;
   place-items: center;
   position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease;
 }
 
-.badge {
+.card-visual::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.card-visual svg {
+  width: 56px;
+  height: 56px;
+  fill: #fff;
+  opacity: 0.95;
+  position: relative;
+  z-index: 2;
+}
+
+.card-visual .badge {
   position: absolute;
   margin: 12px 0 0 12px;
   background: var(--brand-red);
@@ -38,6 +63,7 @@
   padding: 6px 10px;
   border-radius: 999px;
   font-size: 12px;
+  z-index: 3; /* Ensure badge is above everything */
 }
 
 .card-visual svg {
@@ -80,6 +106,10 @@
 .card .more:hover {
   text-decoration: underline;
   gap: 12px;
+}
+
+.card:hover .card-visual {
+  transform: scale(1.05);
 }
 
 @media (max-width: 980px) {

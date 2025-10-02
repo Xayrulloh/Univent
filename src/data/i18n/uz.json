@@ -35,8 +35,7 @@
     "mission": "Bizning jamoasi professionalizmi, chuqur yillik tajriba va doimiy davomiy rivojlanishimiz bizni klientlarga zamonaviy va ishonchilarni echimlar taklif qilishadi. Dunyodagi yetakchi ishlab chiqaruvchi kompaniyalar tomonidan mahsulotlarning sifatli va xalqaroq standartlarga mos kelishadi. Mamlakatdagi eng katta sotib o'zgartiruvchi mahsulotlar bilan tez va tez amalga olishi mumkin bo'lib, shuningizga erishdi."
   },
   "products": {
-    "title": "Mahsulot toifalari",
-    "description": "Asosiy yo'nalishlarning tezkor ko'rib chiqilishi. Batafsil ma'lumot olish uchun bosing (katalog yoki PDF varaqlar bilan bog'lanish mumkin).",
+    "title": "Mahsulotlar katalogi",
     "items": {
       "axial": {
         "title": "Eksenli ventilyatorlar",

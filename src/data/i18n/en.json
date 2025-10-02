@@ -35,8 +35,7 @@
     "mission": "Our team's professionalism, deep knowledge and continuous development enable us to offer clients modern and reliable solutions. Certified supplies from leading world manufacturers guarantee quality and compliance with international standards. The largest warehouse coverage in the country provides uninterrupted deliveries and fast order fulfillment."
   },
   "products": {
-    "title": "Product Categories",
-    "description": "Quick overview of key areas. Click to go to details (can be linked to catalog or PDF sheets).",
+    "title": "Product Catalog",
     "items": {
       "axial": {
         "title": "Axial Fans",
