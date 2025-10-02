@@ -4,6 +4,11 @@ import SectionHead from './SectionHead.astro';
 
 const locale = getCurrentLocale(Astro.url);
 const t = getTranslation(locale);
+
+const locations = Object.entries(t.branches.locations).map(([key, location]) => ({
+  id: key,
+  ...location
+}));
 ---
 
 <section id="branches">
@@ -13,19 +18,102 @@ const t = getTranslation(locale);
       description={t.branches.description}
     />
 
-    <div class="map" aria-label={t.branches.map} :aria-label="ariaLabel"></div>
+    <div id="map" class="map" aria-label={t.branches.map}></div>
 
     <div class="cities">
-      <span class="pill">{t.branches.cities[0]}</span>
-      <span class="pill">{t.branches.cities[1]}</span>
-      <span class="pill">{t.branches.cities[2]}</span>
-      <span class="pill">{t.branches.cities[3]}</span>
-      <span class="pill">{t.branches.cities[4]}</span>
-      <span class="pill">{t.branches.cities[5]}</span>
-      <span class="pill">{t.branches.cities[6]}</span>
-      <span class="pill">{t.branches.cities[7]}</span>
-      <span class="pill">{t.branches.cities[8]}</span>
-      <span class="pill">{t.branches.cities[9]}</span>
+      {locations.map((location, index) => (
+        <button 
+          class="pill" 
+          data-lat={location.coords[0]}
+          data-lng={location.coords[1]}
+          data-hover={location.hover}
+          data-name={location.name}
+          onclick="handleLocationClick(this)"
+        >
+          {location.name}
+        </button>
+      ))}
     </div>
   </div>
 </section>
+
+<script>
+  function handleLocationClick(button) {
+    const lat = parseFloat(button.dataset.lat);
+    const lng = parseFloat(button.dataset.lng);
+    const hover = button.dataset.hover;
+    const name = button.dataset.name;
+
+    if (window.branchesMap) {
+      focusOnMap(lat, lng, hover, name);
+    } else {
+      console.warn('Map not initialized yet');
+    }
+  }
+
+  function initMap() {
+    ymaps.ready(function () {
+      const map = new ymaps.Map('map', {
+        center: [41.281172, 69.228811],
+        zoom: 10,
+        controls: ['zoomControl', 'fullscreenControl']
+      });
+
+      const locationButtons = document.querySelectorAll('.pill');
+      const placemarks = [];
+
+      // Create placemarks for each location
+      locationButtons.forEach((button) => {
+        const lat = parseFloat(button.dataset.lat);
+        const lng = parseFloat(button.dataset.lng);
+        const hover = button.dataset.hover;
+        const name = button.dataset.name;
+
+        const placemark = new ymaps.Placemark([lat, lng], {
+          balloonContent: `
+            <div style="padding: 10px; max-width: 300px;">
+              <h3 style="margin: 0 0 8px 0; color: #e11d2f; font-size: 16px;">${name}</h3>
+              <p style="margin: 0; font-size: 14px; line-height: 1.4;">${hover}</p>
+            </div>
+          `
+        }, {
+          preset: 'islands#redIcon',
+          iconColor: '#e11d2f'
+        });
+
+        map.geoObjects.add(placemark);
+        placemarks.push({ placemark, lat, lng });
+      });
+
+      window.branchesMap = map;
+      window.branchesPlacemarks = placemarks;
+      
+    });
+  }
+
+  function focusOnMap(lat: number, lng: number, hoverText: string, name: string) {
+    if (window.branchesMap && window.branchesPlacemarks) {
+      window.branchesMap.setCenter([lat, lng], 15);
+
+      window.branchesPlacemarks.forEach(({ placemark, placemarkLat, placemarkLng }) => {
+        if (Math.abs(placemarkLat - lat) < 0.0001 && Math.abs(placemarkLng - lng) < 0.0001) {
+          window.branchesPlacemarks.forEach(pm => pm.placemark.balloon.close());
+
+          setTimeout(() => {
+            placemark.balloon.open();
+          }, 100);
+        }
+      });
+    }
+  }
+
+  const script = document.createElement('script');
+
+  script.src = `https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=${import.meta.env.YANDEX_MAPS_API_KEY}`;
+  script.onload = initMap;
+  document.head.appendChild(script);
+
+  window.handleLocationClick = handleLocationClick;
+  window.focusOnMap = focusOnMap;
+
+</script>

@@ -94,10 +94,13 @@
 }
 
 /* Map and cities */
+
 .map {
-  height: 320px;
+  height: 400px;
   border-radius: 20px;
   border: 1px solid #eee;
+  margin-bottom: 24px;
+  overflow: hidden;
   background: repeating-linear-gradient(
     45deg,
     #fafafa,
@@ -105,27 +108,35 @@
     #f3f3f3 12px,
     #f3f3f3 24px
   );
-  margin-bottom: 24px;
 }
 
 .cities {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
 }
 
 .pill {
   border: 1px solid #eee;
   border-radius: 999px;
-  padding: 8px 12px;
+  padding: 8px 16px;
   background: #fff;
   font-size: 14px;
-  transition: var(--transition);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: inherit;
 }
 
-.pill:hover {
+.pill:hover,
+.pill:focus {
   border-color: var(--brand-red);
   color: var(--brand-red);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(225, 29, 47, 0.15);
+}
+
+.pill:active {
   transform: translateY(-1px);
 }
 
@@ -324,6 +335,19 @@ textarea:valid {
 
   .adv p {
     font-size: 12px;
+  }
+
+  .map {
+    height: 300px;
+  }
+
+  .pill {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .cities {
+    gap: 8px;
   }
 }
 

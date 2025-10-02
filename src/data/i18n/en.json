@@ -75,7 +75,63 @@
     "title": "Branches",
     "description": "Find the nearest Univent sales point. At the exhibition - scan the QR and get the map on your phone.",
     "map": "Map of branches (placeholder)",
-    "cities": ["Tashkent", "Samarkand", "Bukhara", "Namangan", "Andijan", "Fergana", "Kokand", "Nukus", "Khiva", "Navoi"]
+    "locations": {
+      "IKLIM showroom": {
+        "name": "IKLIM showroom",
+        "coords": [41.281172, 69.228811],
+        "hover": "Tashkent, Arna Say street, 7a, 'IKLIM - showroom', +998 71 200 02 32, +998 98 300 01 58"
+      },
+      "Jami 121": {
+        "name": "Jami 121",
+        "coords": [41.355676, 69.248637],
+        "hover": "Tashkent, Almazar district, Usta Shirin street, 121/1, next to the construction market 'Jami', opposite the 'Carvon' shop, 'Vent Market - showroom', +998 95 805 00 50"
+      },
+      "Jami 125": {
+        "name": "Jami 125",
+        "coords": [41.355595, 69.245268],
+        "hover": "Tashkent, Almazar district, Usta Shirin street, 125/1, 'Jami' construction market, №1-233, +998 94 624 37 07"
+      },
+      "Jami 139": {
+        "name": "Jami 139",
+        "coords": [41.357016, 69.245726],
+        "hover": "Tashkent, Almazar district, Usta Shirin street, 139, opposite the 'Jami' construction market, +998 97 733 08 33"
+      },
+      "Parkent 131": {
+        "name": "Parkent 131",
+        "coords": [41.315736, 69.326817],
+        "hover": "Tashkent, M. Ulugbek district, Parkent street, 131, +998 98 128 41 40, +998 98 363 60 33"
+      },
+      "Stroy Gorod": {
+        "name": "Stroy Gorod",
+        "coords": [41.287959, 69.150672],
+        "hover": "Tashkent, Uchtepa district, Urikaz, Stroy Gorod, 2 block, №190 +998 98 306 90 08, +998 99 800 90 68"
+      },
+      "Bektopyi Stroy Market": {
+        "name": "Bektopyi Stroy Market",
+        "coords": [41.253475, 69.161908],
+        "hover": "Tashkent, Chilanzar district, “Bektopyi Stroy Market” №106 +998 94 603 44 44, +998 97 714 27 72"
+      },
+      "Erkin savdo majmua": {
+        "name": "Erkin savdo majmua",
+        "coords": [41.227380, 69.167941],
+        "hover": "Tashkent region, Zangiata district, Erkin M39 post, building 48, “Erkin savdo majmua” №7 +998 91 192 00 42"
+      },
+      "Turkistan 30": {
+        "name": "Turkistan 30",
+        "coords": [39.646626, 66.919350],
+        "hover": "Samarkand city, Turkistan street, 30 +998 90 402 00 70, +998 94 402 00 70"
+      },
+      "Mahalin People's Meeting": {
+        "name": "Mahalin People's Meeting",
+        "coords": [41.009007, 71.647857],
+        "hover": "Namangan city, March 8 street, 3a, “Mahalin People's Meeting” +998 99 816 66 57, +998 91 757 51 11"
+      },
+      "Shinam": {
+        "name": "Shinam",
+        "coords": [40.802927, 72.343342],
+        "hover": "Andijan city, Pirimuhamedova street, 96, “Shinam” construction market, 2 floor, №409 +998 90 547 90 70, +998 90 626 00 70"
+      }
+    }
   },
   "contact": {
     "title": "Contacts",

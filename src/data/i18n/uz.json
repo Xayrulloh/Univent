@@ -75,7 +75,63 @@
     "title": "Filiallar",
     "description": "Univent-ning eng yaqin savdo nuqtasini toping. Ko'rgazmada - QR kodni skanerlang va telefoningizda xaritani oling.",
     "map": "Filiallar xaritasi (placeholder)",
-    "cities": ["Toshkent", "Samarqand", "Buxoro", "Namangan", "Andijon", "Farg'ona", "Qo'qon", "Nukus", "Xiva", "Navoiy"]
+    "locations": {
+      "IKLIM shouroomi": {
+        "name": "IKLIM shouroomi",
+        "coords": [41.281172, 69.228811],
+        "hover": "Toshkent shahri, Arna Say ko'chasi, 7a, 'IKLIM - shouroomi', +998 71 200 02 32, +998 98 300 01 58"
+      },
+      "Jomi 121": {
+        "name": "Jomi 121",
+        "coords": [41.355676, 69.248637],
+        "hover": "Toshkent shahri, Almazar tumkori, Usta Shirin ko'chasi, 121/1, qurilgan Jomi savdo nuqtasining qarshisi, Carvon savdo nuqtasiga qarshi, 'Vent Market - shouroomi', +998 95 805 00 50"
+      },
+      "Jomi 125": {
+        "name": "Jomi 125",
+        "coords": [41.355595, 69.245268],
+        "hover": "Toshkent shahri, Almazar tumkori, Usta Shirin ko'chasi, 125/1, Jomi savdo nuqtasining №1-233, +998 94 624 37 07"
+      },
+      "Jomi 139": {
+        "name": "Jomi 139",
+        "coords": [41.357016, 69.245726],
+        "hover": "Toshkent shahri, Almazar tumkori, Usta Shirin ko'chasi, 139, Jomi savdo nuqtasining qarshisi, +998 97 733 08 33"
+      },
+      "Parkent 131": {
+        "name": "Parkent 131",
+        "coords": [41.315736, 69.326817],
+        "hover": "Toshkent shahri, M.Ulugbek tumkori, Parkent ko'chasi, 131, +998 98 128 41 40, +998 98 363 60 33"
+      },
+      "Stroy Gorod": {
+        "name": "Stroy Gorod",
+        "coords": [41.287959, 69.150672],
+        "hover": "Toshkent shahri, Uchtepa tumkori, Urikaz, Stroy Gorod, 2-blok, №190 +998 98 306 90 08, +998 99 800 90 68"
+      },
+      "Bektopi Stroy Market": {
+        "name": "Bektopi Stroy Market",
+        "coords": [41.253475, 69.161908],
+        "hover": "Toshkent shahri, Chilanzar tumkori, “Bektopi Stroy Market” №106 +998 94 603 44 44, +998 97 714 27 72"
+      },
+      "Erkin savdo majmuasi": {
+        "name": "Erkin savdo majmuasi",
+        "coords": [41.227380, 69.167941],
+        "hover": "Toshkent viloyati, Zangiota tumkori, Erkin posti М39, binoning 48, “Erkin savdo majmuasi” №7 +998 91 192 00 42"
+      },
+      "Turkiston 30": {
+        "name": "Turkiston 30",
+        "coords": [39.646626, 66.919350],
+        "hover": "Samarkand shahri, Turkiston ko'chasi 30 +998 90 402 00 70, +998 94 402 00 70"
+      },
+      "Mahalliy qurultoyi fuqarolar yig'ilish beruvi": {
+        "name": "Mahalliy qurultoyi fuqarolar yig'ilish beruvi",
+        "coords": [41.009007, 71.647857],
+        "hover": "Namangan shahri, 8-mart ko'chasi 3a, “Mahalliy qurultoyi fuqarolar yig'ilish beruvi” +998 99 816 66 57, +998 91 757 51 11"
+      },
+      "Shinam": {
+        "name": "Shinam",
+        "coords": [40.802927, 72.343342],
+        "hover": "Andijon shahri, Pirimuhamedov ko'chasi 96, Stroy Gorod savdo nuqtasi 'Shinam', 2 etaj, №409 +998 90 547 90 70, +998 90 626 00 70"
+      }
+    }
   },
   "contact": {
     "title": "Kontaktlar",

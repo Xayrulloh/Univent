@@ -7,7 +7,7 @@ const t = getTranslation(locale);
 
 const partners = [
   { name: "BVN", logo: "/partners/BVN_logo.svg" },
-  { name: "Flexiva", logo: "/partners/flexiva_logo_svg" },
+  { name: "Flexiva", logo: "/partners/flexiva_logo.svg" },
   { name: "Makroteknik Vektörel", logo: "/partners/makroteknik-vektörel_logo.svg" },
   { name: "改好", logo: "/partners/改好.svg" },
   { name: "Popula", logo: "/partners/popula_logo.svg" },
@@ -26,8 +26,8 @@ const partners = [
     <div class="partners-container">
       <div class="partners-track">
         <!-- First set of partners -->
-        {partners.map((partner, index) => (
-          <div class="partner-item" key={`first-${index}`}>
+        {partners.map((partner) => (
+          <div class="partner-item">
             <img 
               src={partner.logo} 
               alt={partner.name}
@@ -38,8 +38,8 @@ const partners = [
           </div>
         ))}
         <!-- Duplicate for seamless loop -->
-        {partners.map((partner, index) => (
-          <div class="partner-item" key={`second-${index}`}>
+        {partners.map((partner) => (
+          <div class="partner-item">
             <img 
               src={partner.logo} 
               alt={partner.name}

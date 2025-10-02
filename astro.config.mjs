@@ -9,4 +9,12 @@ export default defineConfig({
       redirectToDefaultLocale: false
     }
   },
+  env: {
+    schema: {
+      YANDEX_MAPS_API_KEY: {
+        context: 'client',
+        access: 'public'
+      }
+    }
+  }
 });
