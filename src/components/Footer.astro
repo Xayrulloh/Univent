@@ -7,11 +7,12 @@ const t = getTranslation(locale);
 <footer>
   <div class="container foot">
     <div class="brand">
-      <div class="logo" aria-label="Univent logo">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.5 7.2 7.5 1.1-5.4 5.3 1.3 7.4L12 19.1 5.1 23l1.3-7.4L1 10.3l7.5-1.1L12 2z"/></svg>
+      <div class="logo" aria-label={t.header.title}>
+        <!-- FIXME: pls fix svg -->
+        <img src={`/favicon.svg`} alt={t.header.title} width="100" height="36" /> 
       </div>
-      <span>Univent</span>
     </div>
+
     
     <small>{t.footer.copyright}</small>
     
