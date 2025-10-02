@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 
 export default defineConfig({
   i18n: {
@@ -11,10 +11,10 @@ export default defineConfig({
   },
   env: {
     schema: {
-      YANDEX_MAPS_API_KEY: {
+      YANDEX_MAPS_API_KEY: envField.string({
         context: 'client',
         access: 'public'
-      }
+      })
     }
   }
 });
