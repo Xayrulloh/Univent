@@ -1,67 +1,106 @@
 ---
-import { getCurrentLocale, getTranslation } from '../utils/translations';
-import SectionHead from './SectionHead.astro';
+import { getCurrentLocale, getTranslation } from "../utils/translations";
+import SectionHead from "./SectionHead.astro";
 
 const locale = getCurrentLocale(Astro.url);
 const t = getTranslation(locale);
 
 const productImages = {
-  bvn: '/images/products/bvn_bdtx.png',
-  fem: '/images/products/FEM.png', 
-  popula: '/images/products/popula.png',
-  vents: '/images/products/vents.png'
+  bvn: "/images/products/bvn_bdtx.png",
+  fem: "/images/products/FEM.png",
+  popula: "/images/products/popula.png",
+  vents: "/images/products/vents.png",
 };
 ---
 
 <section id="products">
   <div class="container">
-    <SectionHead 
-      title={t.products.title}
-    />
+    <SectionHead title={t.products.title} />
 
     <div class="grid">
       <article class="card">
-        <div class="card-visual" style={`background-image: url('${productImages.bvn}')`}>
+        <div
+          class="card-visual"
+          style={`background-image: url('${productImages.bvn}')`}
+        >
           <span class="badge">{t.products.top}</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm-1 4h2v10h-2V7z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"
+            ><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm-1 4h2v10h-2V7z"
+            ></path></svg
+          >
         </div>
         <div class="card-body">
           <h3>{t.products.items.axial.title}</h3>
           <p>{t.products.items.axial.description}</p>
-          <a class="more" href="https://iklim.uz/" target="_blank" rel="noopener noreferrer">{t.products.more}</a>
+          <a
+            class="more"
+            href="https://iklim.uz/"
+            target="_blank"
+            rel="noopener noreferrer">{t.products.more}</a
+          >
         </div>
       </article>
 
       <article class="card">
-        <div class="card-visual" style={`background-image: url('${productImages.vents}')`}>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v8H4zM2 7h20v2H2zm0 8h20v2H2z"/></svg>
+        <div
+          class="card-visual"
+          style={`background-image: url('${productImages.vents}')`}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"
+            ><path d="M4 8h16v8H4zM2 7h20v2H2zm0 8h20v2H2z"></path></svg
+          >
         </div>
         <div class="card-body">
           <h3>{t.products.items.centrifugal.title}</h3>
           <p>{t.products.items.centrifugal.description}</p>
-          <a class="more" href="https://iklim.uz/" target="_blank" rel="noopener noreferrer">{t.products.more}</a>
+          <a
+            class="more"
+            href="https://iklim.uz/"
+            target="_blank"
+            rel="noopener noreferrer">{t.products.more}</a
+          >
         </div>
       </article>
 
       <article class="card">
-        <div class="card-visual" style={`background-image: url('${productImages.popula}')`}>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10h18v4H3zM5 6h14v2H5zM5 16h14v2H5z"/></svg>
+        <div
+          class="card-visual"
+          style={`background-image: url('${productImages.popula}')`}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"
+            ><path d="M3 10h18v4H3zM5 6h14v2H5zM5 16h14v2H5z"></path></svg
+          >
         </div>
         <div class="card-body">
           <h3>{t.products.items.duct.title}</h3>
           <p>{t.products.items.duct.description}</p>
-          <a class="more" href="https://iklim.uz/" target="_blank" rel="noopener noreferrer">{t.products.more}</a>
+          <a
+            class="more"
+            href="https://iklim.uz/"
+            target="_blank"
+            rel="noopener noreferrer">{t.products.more}</a
+          >
         </div>
       </article>
 
       <article class="card">
-        <div class="card-visual" style={`background-image: url('${productImages.fem}')`}>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v6H4zM4 14h16v6H4z"/></svg>
+        <div
+          class="card-visual"
+          style={`background-image: url('${productImages.fem}')`}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"
+            ><path d="M4 4h16v6H4zM4 14h16v6H4z"></path></svg
+          >
         </div>
         <div class="card-body">
           <h3>{t.products.items.supply.title}</h3>
           <p>{t.products.items.supply.description}</p>
-          <a class="more" href="https://iklim.uz/" target="_blank" rel="noopener noreferrer">{t.products.more}</a>
+          <a
+            class="more"
+            href="https://iklim.uz/"
+            target="_blank"
+            rel="noopener noreferrer">{t.products.more}</a
+          >
         </div>
       </article>
     </div>

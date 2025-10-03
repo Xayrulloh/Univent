@@ -1,6 +1,6 @@
 ---
-import { getCurrentLocale, getTranslation } from '../utils/translations';
-import SectionHead from './SectionHead.astro';
+import { getCurrentLocale, getTranslation } from "../utils/translations";
+import SectionHead from "./SectionHead.astro";
 
 const locale = getCurrentLocale(Astro.url);
 const t = getTranslation(locale);
@@ -8,50 +8,48 @@ const t = getTranslation(locale);
 
 <section id="contact">
   <div class="container">
-    <SectionHead 
-      title={t.contact.title}
-      description={t.contact.description}
-    />
+    <SectionHead title={t.contact.title} description={t.contact.description} />
 
-    <form 
-      id="contact-form" 
-      method="POST" 
+    <form
+      id="contact-form"
+      method="POST"
       data-success-message={t.contact.form.success_message}
       data-error-message={t.contact.form.error_message}
       data-sending-text={t.contact.form.sending}
       data-submit-text={t.contact.form.submit}
     >
-      <input 
-        type="text" 
-        name="name" 
-        placeholder={t.contact.form.name} 
+      <input
+        type="text"
+        name="name"
+        placeholder={t.contact.form.name}
         required
         minlength="2"
         maxlength="100"
-      >
-      <input 
-        type="tel" 
-        name="phone" 
-        placeholder={t.contact.form.phone} 
+      />
+      <input
+        type="tel"
+        name="phone"
+        placeholder={t.contact.form.phone}
         required
         minlength="7"
         maxlength="20"
-      >
-      <input 
-        type="email" 
-        name="email" 
-        class="full" 
+      />
+      <input
+        type="email"
+        name="email"
+        class="full"
         placeholder={t.contact.form.email}
         maxlength="255"
-      >
-      <textarea 
-        name="message" 
-        class="full" 
+      />
+      <textarea
+        name="message"
+        class="full"
         placeholder={t.contact.form.message}
-        maxlength="1000"
-      ></textarea>
+        maxlength="1000"></textarea>
       <div class="full">
-        <button class="btn btn-primary" type="submit">{t.contact.form.submit}</button>
+        <button class="btn btn-primary" type="submit"
+          >{t.contact.form.submit}</button
+        >
       </div>
     </form>
   </div>
@@ -61,17 +59,17 @@ const t = getTranslation(locale);
   import { CHAT_ID } from "../utils/constants";
   import { formatContactMessage, sendTelegramMessage } from "../utils/telegram";
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('contact-form');
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contact-form");
 
     if (!form) return;
 
-    const successMessage = form.getAttribute('data-success-message')!
-    const errorMessage = form.getAttribute('data-error-message')!
-    const sendingText = form.getAttribute('data-sending-text')!
-    const submitText = form.getAttribute('data-submit-text')!
+    const successMessage = form.getAttribute("data-success-message")!;
+    const errorMessage = form.getAttribute("data-error-message")!;
+    const sendingText = form.getAttribute("data-sending-text")!;
+    const submitText = form.getAttribute("data-submit-text")!;
 
-    form.addEventListener('submit', async (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
       const submitButton: any = form.querySelector('button[type="submit"]');
@@ -80,14 +78,14 @@ const t = getTranslation(locale);
 
       try {
         submitButton.disabled = true;
-        submitButton.textContent = sendingText
+        submitButton.textContent = sendingText;
 
         const formData = new FormData(form as HTMLFormElement);
 
-        const name = String(formData.get('name') || '');
-        const phone = String(formData.get('phone') || '');
-        const email = String(formData.get('email') || '');
-        const message = String(formData.get('message') || '');
+        const name = String(formData.get("name") || "");
+        const phone = String(formData.get("phone") || "");
+        const email = String(formData.get("email") || "");
+        const message = String(formData.get("message") || "");
 
         const formattedMessage = formatContactMessage({
           name,
@@ -106,9 +104,8 @@ const t = getTranslation(locale);
 
           (form as HTMLFormElement).reset();
         }
-
       } catch (error) {
-        console.error('Form submission error:', error);
+        console.error("Form submission error:", error);
         showErrorNotification(errorMessage);
       } finally {
         const submitButton: any = form.querySelector('button[type="submit"]');
@@ -121,15 +118,15 @@ const t = getTranslation(locale);
     });
 
     function showSuccessNotification(message: string) {
-      showNotification(message, 'success');
+      showNotification(message, "success");
     }
 
     function showErrorNotification(message: string) {
-      showNotification(message, 'error');
+      showNotification(message, "error");
     }
 
-    function showNotification(message: string, type: 'success' | 'error') {
-      const notification = document.createElement('div');
+    function showNotification(message: string, type: "success" | "error") {
+      const notification = document.createElement("div");
 
       notification.textContent = message;
       notification.className = `notification notification-${type}`;

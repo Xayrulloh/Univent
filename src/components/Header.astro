@@ -1,7 +1,7 @@
 ---
-import { getAbsoluteLocaleUrl  } from 'astro:i18n';
-import { getCurrentLocale, getTranslation } from '../utils/translations';
-import { getCleanPath } from '../utils/clean-path';
+import { getAbsoluteLocaleUrl } from "astro:i18n";
+import { getCurrentLocale, getTranslation } from "../utils/translations";
+import { getCleanPath } from "../utils/clean-path";
 
 const currentPath = getCleanPath(Astro.url.pathname);
 
@@ -11,31 +11,69 @@ const t = getTranslation(locale);
 
 <header>
   <div class="container nav">
-    <a href={`/${locale !== 'ru' ? locale : ''}`} class="brand">
+    <a href={`/${locale !== "ru" ? locale : ""}`} class="brand">
       <div class="logo" aria-label={t.header.title}>
         <!-- FIXME: pls fix svg -->
-        <img src={`/favicon.svg`} alt={t.header.title} width="100" height="36" /> 
+        <img
+          src={`/logo-light.svg`}
+          alt={t.header.title}
+          width="100"
+          height="36"
+        />
       </div>
     </a>
 
     <nav>
       <ul>
-        <li><a href={`${locale !== 'ru' ? `/${locale}#about` : '#about'}`}>{t.header.nav.about}</a></li>
-        <li><a href={`${locale !== 'ru' ? `/${locale}#products` : '#products'}`}>{t.header.nav.products}</a></li>
-        <li><a href={`${locale !== 'ru' ? `/${locale}#benefits` : '#benefits'}`}>{t.header.nav.benefits}</a></li>
-        <li><a href={`${locale !== 'ru' ? `/${locale}#branches` : '#branches'}`}>{t.header.nav.branches}</a></li>
-        <li><a href="https://iklim.uz/" target="_blank" rel="noopener noreferrer">{t.header.nav.market}</a></li>
-        <li><a href={`${locale !== 'ru' ? `/${locale}#contact` : '#contact'}`}>{t.header.nav.contact}</a></li>
+        <li>
+          <a href={`${locale !== "ru" ? `/${locale}#about` : "#about"}`}
+            >{t.header.nav.about}</a
+          >
+        </li>
+        <li>
+          <a href={`${locale !== "ru" ? `/${locale}#products` : "#products"}`}
+            >{t.header.nav.products}</a
+          >
+        </li>
+        <li>
+          <a href={`${locale !== "ru" ? `/${locale}#benefits` : "#benefits"}`}
+            >{t.header.nav.benefits}</a
+          >
+        </li>
+        <li>
+          <a href={`${locale !== "ru" ? `/${locale}#branches` : "#branches"}`}
+            >{t.header.nav.branches}</a
+          >
+        </li>
+        <li>
+          <a href="https://iklim.uz/" target="_blank" rel="noopener noreferrer"
+            >{t.header.nav.market}</a
+          >
+        </li>
+        <li>
+          <a href={`${locale !== "ru" ? `/${locale}#contact` : "#contact"}`}
+            >{t.header.nav.contact}</a
+          >
+        </li>
 
         <li class="mobile-lang">
           <div class="lang">
-            <button onclick={`window.location.href='${getAbsoluteLocaleUrl('ru', currentPath)}'`} class:list={{ active: locale === 'ru' }}>
+            <button
+              onclick={`window.location.href='${getAbsoluteLocaleUrl("ru", currentPath)}'`}
+              class:list={{ active: locale === "ru" }}
+            >
               RU
             </button>
-            <button onclick={`window.location.href='${getAbsoluteLocaleUrl('uz', currentPath)}'`} class:list={{ active: locale === 'uz' }}>
+            <button
+              onclick={`window.location.href='${getAbsoluteLocaleUrl("uz", currentPath)}'`}
+              class:list={{ active: locale === "uz" }}
+            >
               UZ
             </button>
-            <button onclick={`window.location.href='${getAbsoluteLocaleUrl('en', currentPath)}'`} class:list={{ active: locale === 'en' }}>
+            <button
+              onclick={`window.location.href='${getAbsoluteLocaleUrl("en", currentPath)}'`}
+              class:list={{ active: locale === "en" }}
+            >
               EN
             </button>
           </div>
@@ -44,65 +82,64 @@ const t = getTranslation(locale);
     </nav>
 
     <div class="lang">
-      <button 
-        onclick={`window.location.href='${getAbsoluteLocaleUrl('ru', currentPath)}'`}
-        class:list={{ active: locale === 'ru' }}
+      <button
+        onclick={`window.location.href='${getAbsoluteLocaleUrl("ru", currentPath)}'`}
+        class:list={{ active: locale === "ru" }}
       >
         RU
       </button>
-      <button 
-        onclick={`window.location.href='${getAbsoluteLocaleUrl('uz', currentPath)}'`}
-        class:list={{ active: locale === 'uz' }}
+      <button
+        onclick={`window.location.href='${getAbsoluteLocaleUrl("uz", currentPath)}'`}
+        class:list={{ active: locale === "uz" }}
       >
         UZ
       </button>
-      <button 
-        onclick={`window.location.href='${getAbsoluteLocaleUrl('en', currentPath)}'`}
-        class:list={{ active: locale === 'en' }}
+      <button
+        onclick={`window.location.href='${getAbsoluteLocaleUrl("en", currentPath)}'`}
+        class:list={{ active: locale === "en" }}
       >
         EN
       </button>
     </div>
-</div>
-
-    <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
   </div>
+
+  <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
 </header>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const navMenu = document.querySelector('nav ul');
-    
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.querySelector(".mobile-menu-btn");
+    const navMenu = document.querySelector("nav ul");
+
     if (menuBtn && navMenu) {
-      menuBtn.addEventListener('click', (e) => {
+      menuBtn.addEventListener("click", (e) => {
         e.preventDefault();
 
-        navMenu.classList.toggle('open');
+        navMenu.classList.toggle("open");
 
-        const isExpanded: any = navMenu.classList.contains('open');
+        const isExpanded: any = navMenu.classList.contains("open");
 
-        menuBtn.setAttribute('aria-expanded', isExpanded);
-        menuBtn.textContent = isExpanded ? '✕' : '☰';
+        menuBtn.setAttribute("aria-expanded", isExpanded);
+        menuBtn.textContent = isExpanded ? "✕" : "☰";
       });
 
-      document.addEventListener('click', (e: any) => {
+      document.addEventListener("click", (e: any) => {
         if (!e?.target) return false;
 
-        if (!e.target.closest('nav') && !e.target.closest('.mobile-menu-btn')) {
-          navMenu.classList.remove('open');
-          menuBtn.setAttribute('aria-expanded', 'false');
-          menuBtn.textContent = '☰';
+        if (!e.target.closest("nav") && !e.target.closest(".mobile-menu-btn")) {
+          navMenu.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+          menuBtn.textContent = "☰";
         }
       });
 
-      const navLinks = document.querySelectorAll('nav a');
+      const navLinks = document.querySelectorAll("nav a");
 
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu.classList.remove('open');
-          menuBtn.setAttribute('aria-expanded', 'false');
-          menuBtn.textContent = '☰';
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+          menuBtn.textContent = "☰";
         });
       });
     }

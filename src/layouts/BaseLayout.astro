@@ -1,29 +1,45 @@
 ---
-import { getAbsoluteLocaleUrl } from 'astro:i18n';
-import { getTranslation, getCurrentLocale } from '../utils/translations';
-import '../styles/global.css';
-import  SpeedInsights  from "@vercel/speed-insights/astro"
+import { getAbsoluteLocaleUrl } from "astro:i18n";
+import { getTranslation, getCurrentLocale } from "../utils/translations";
+import "../styles/global.css";
+import SpeedInsights from "@vercel/speed-insights/astro";
 
 const locale = getCurrentLocale(Astro.url);
 const t = getTranslation(locale);
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={locale}>
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{t.meta.title}</title>
-  <meta name="description" content={t.meta.description} />
-  
-  <link rel="alternate" hreflang="ru" href={getAbsoluteLocaleUrl('ru', Astro.url.pathname)} />
-  <link rel="alternate" hreflang="uz" href={getAbsoluteLocaleUrl('uz', Astro.url.pathname)} />
-  <link rel="alternate" hreflang="en" href={getAbsoluteLocaleUrl('en', Astro.url.pathname)} />
-  <link rel="alternate" hreflang="x-default" href={getAbsoluteLocaleUrl('ru', Astro.url.pathname)} />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-</head>
-<body>
-  <slot />
-  <SpeedInsights />
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{t.meta.title}</title>
+    <meta name="description" content={t.meta.description} />
+
+    <link
+      rel="alternate"
+      hreflang="ru"
+      href={getAbsoluteLocaleUrl("ru", Astro.url.pathname)}
+    />
+    <link
+      rel="alternate"
+      hreflang="uz"
+      href={getAbsoluteLocaleUrl("uz", Astro.url.pathname)}
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href={getAbsoluteLocaleUrl("en", Astro.url.pathname)}
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={getAbsoluteLocaleUrl("ru", Astro.url.pathname)}
+    />
+    <!-- <link rel="icon" href="/favicon.svg" type="image/svg+xml" /> -->
+  </head>
+  <body>
+    <slot />
+    <SpeedInsights />
+  </body>
 </html>

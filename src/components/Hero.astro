@@ -1,9 +1,9 @@
 ---
-import { getCurrentLocale, getTranslation } from '../utils/translations';
+import { getCurrentLocale, getTranslation } from "../utils/translations";
 
 const locale = getCurrentLocale(Astro.url);
 const t = getTranslation(locale);
-const ariaLabel  = t.hero.art;
+const ariaLabel = t.hero.art;
 ---
 
 <section class="hero">
@@ -17,9 +17,15 @@ const ariaLabel  = t.hero.art;
         <a href="#contact" class="btn btn-ghost">{t.hero.cta.contact}</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><strong>1500+</strong><span>{t.hero.stats.products}</span></div>
-        <div class="stat"><strong>15+</strong><span>{t.hero.stats.stores}</span></div>
-        <div class="stat"><strong>№1</strong><span>{t.hero.stats.leader}</span></div>
+        <div class="stat">
+          <strong>1500+</strong><span>{t.hero.stats.products}</span>
+        </div>
+        <div class="stat">
+          <strong>15+</strong><span>{t.hero.stats.stores}</span>
+        </div>
+        <div class="stat">
+          <strong>№1</strong><span>{t.hero.stats.leader}</span>
+        </div>
       </div>
     </div>
     <div class="hero-right">

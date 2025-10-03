@@ -1,6 +1,6 @@
 ---
-import SectionHead from './SectionHead.astro';
-import { getCurrentLocale, getTranslation } from '../utils/translations';
+import SectionHead from "./SectionHead.astro";
+import { getCurrentLocale, getTranslation } from "../utils/translations";
 
 const locale = getCurrentLocale(Astro.url);
 const t = getTranslation(locale);
@@ -8,10 +8,7 @@ const t = getTranslation(locale);
 
 <section id="about">
   <div class="container">
-    <SectionHead 
-      title={t.about.title} 
-      description={t.about.description} 
-    />
+    <SectionHead title={t.about.title} description={t.about.description} />
 
     <div class="hero-card">
       <strong>{t.about.mission}</strong>

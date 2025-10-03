@@ -25,19 +25,10 @@ header {
 }
 
 .logo {
-  width: 36px;
   height: 36px;
   border-radius: 8px;
-  background: linear-gradient(135deg, var(--brand-red), #ff5757);
   display: grid;
   place-items: center;
-  box-shadow: 0 6px 16px rgba(225, 29, 47, 0.35);
-}
-
-.logo svg {
-  width: 20px;
-  height: 20px;
-  fill: #fff;
 }
 
 nav ul {
