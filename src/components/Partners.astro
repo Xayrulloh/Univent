@@ -9,12 +9,12 @@ const partners = [
   { name: "BVN", logo: "/partners/BVN_logo.svg" },
   { name: "Flexiva", logo: "/partners/flexiva_logo.svg" },
   {
-    name: "Makroteknik Vektörel",
-    logo: "/partners/makroteknik-vektörel_logo.svg",
+    name: "Makroteknik",
+    logo: "/partners/makroteknik.svg",
   },
-  { name: "改好", logo: "/partners/改好.svg" },
+  { name: "China", logo: "/partners/china.svg" },
   { name: "Popula", logo: "/partners/popula_logo.svg" },
-  { name: "无横线", logo: "/partners/logo(无横线)源文件.svg" },
+  { name: "Another-china", logo: "/partners/another-china.svg" },
   // { name: "Partner 7", logo: "/public/partners/partner7.png" },
 ];
 ---
@@ -36,6 +36,7 @@ const partners = [
                 loading="lazy"
                 width="160"
                 height="80"
+                class={partner.name}
               />
             </div>
           ))
@@ -50,6 +51,7 @@ const partners = [
                 loading="lazy"
                 width="160"
                 height="80"
+                class={partner.name}
               />
             </div>
           ))
@@ -118,6 +120,34 @@ const partners = [
   .partner-logo:hover {
     opacity: 1;
     transform: scale(1.05); /* Subtle scale effect on hover */
+  }
+
+  .partner-item {
+    width: 160px;
+    height: 80px;
+  }
+
+  .partner-item .Makroteknik {
+    scale: 1.15;
+  }
+
+  .partner-item .China {
+    scale: 2.25;
+    transform: translateY(7px);
+  }
+
+  .partner-item .Popula {
+    scale: 1.9;
+    transform: translateY(15px);
+  }
+
+  .partner-item .Another-china {
+    scale: 5.5;
+    transform: translateY(25px);
+  }
+
+  .partner-item .BVN {
+    transform: translateY(10px);
   }
 
   @keyframes scroll-partners {
