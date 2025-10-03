@@ -31,12 +31,6 @@ textarea {
   grid-column: span 2;
 }
 
-.form-note {
-  color: #777;
-  font-size: 14px;
-  margin-top: 6px;
-}
-
 /* Form validation styles */
 input:invalid,
 textarea:invalid {
